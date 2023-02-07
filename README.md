@@ -1,2 +1,2 @@
-# dotfiles
-My dotfiles is great
+# DOTFILES
+* THE DOTFILEs
