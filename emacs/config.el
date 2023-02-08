@@ -27,6 +27,13 @@
 
 (setq evil-insert-state-cursor 'box)
 
+; (defun set-vterm-shell-powershell ()
+;  (let ((powershell-path (executable-find "powershell.exe")))
+;    (when powershell-path
+;      (setq vterm-shell powershell-path))))
+
+; (add-hook 'vterm-mode-hook #'set-vterm-shell-powershell)
+
 (setq confirm-kill-emacs nil)
 
 (when (eq system-type 'windows-nt)
@@ -34,14 +41,7 @@
   (setq explicit-shell-file-name shell-file-name))
 
 
-(defun set-compile-command ()
-  (setq compile-command
-        (concat "gcc -o "
-                (file-name-sans-extension (file-name-nondirectory buffer-file-name))
-                " \""
-                (buffer-file-name))))
-
-(add-hook 'c-mode-hook 'set-compile-command)
+(setq compile-command "c:/Users/kesha/Code/Random/build.ps1")
 
 
 (setq initial-buffer-choice "c:/Users/kesha/Code/todo.org")
