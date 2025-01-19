@@ -13,7 +13,7 @@ Inspired by [Octogony's](https://github.com/octagony/dwm-config-files.git) dwm c
 
 - Added various themes for dwm, such as tokyonight, rose-pine, monokai, etc.  
 - Removed unneeded tiling modes (for me).  
-- Replaced dwm with rofi.  
+- Replaced dmenu with rofi.  
 - Modified the keymaps to suit my needs.  
 
 ## SLSTATUS
