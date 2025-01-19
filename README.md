@@ -1,5 +1,10 @@
 # My dotfiles
 
+![Alt text](/img/desktop.png?raw=true "Desktop Image")
+![Alt text](/img/termnvim?raw=true "Terminal and Nvim dashboard Image")
+![Alt text](/img/nvim.png?raw=true "Neovim Image")
+![Alt text](/img/neotree.png?raw=true "Neotree Image")
+
 ## DWM
 
 Inspired by [Octogony's](https://github.com/octagony/dwm-config-files.git) dwm config.
