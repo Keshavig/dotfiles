@@ -1,9 +1,9 @@
 # My dotfiles
 
-![Alt text](/img/desktop.png?raw=true "Desktop Image")
-![Alt text](/img/termnvim?raw=true "Terminal and Nvim dashboard Image")
-![Alt text](/img/nvim.png?raw=true "Neovim Image")
-![Alt text](/img/neotree.png?raw=true "Neotree Image")
+![Desktop.png](/img/desktop.png?raw=true "Desktop Image")
+![Terminal.png](/img/termnvim.png?raw=true "Terminal and Nvim dashboard Image")
+![Neovim.png](/img/nvim.png?raw=true "Neovim Image")
+![Neotree.png](/img/neotree.png?raw=true "Neotree Image")
 
 ## DWM
 
