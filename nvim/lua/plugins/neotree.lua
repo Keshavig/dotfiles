@@ -5,7 +5,8 @@ return {
   opts = {
     filesystem = {
       follow_current_file = true, -- Automatically highlight the current file
-      hijack_netrw = true,        -- Replace netrw with neo-tree
+      hijack_netrw = true, -- Replace netrw with neo-tree
+      hijack_netrw_behaviour = "open_current",
     },
     window = {
       width = 30, -- Set the width of the Neo-tree window
@@ -14,18 +15,14 @@ return {
       },
     },
   },
-  dependencies = { 
+  dependencies = {
     "nvim-lua/plenary.nvim", -- Dependency required for neo-tree
-    "MunifTanjim/nui.nvim",  -- UI library for neo-tree
+    "MunifTanjim/nui.nvim", -- UI library for neo-tree
     "nvim-tree/nvim-web-devicons", -- Optional: Icons for files
   },
   config = function()
     -- Add your custom keybinding here
-    vim.keymap.set(
-      "n", 
-      "<leader>dj", 
-      ":Neotree position=current<CR>", 
-      { silent = true, noremap = true }
-    )
+    vim.keymap.set("n", "<leader>dj", ":Neotree position=current<CR>", { silent = true, noremap = true })
+    vim.keymap.set("n", "<leader>pf", ":Neotree position=bottom<CR>", { silent = true, noremap = true })
   end,
 }

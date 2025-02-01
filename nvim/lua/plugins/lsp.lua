@@ -38,6 +38,7 @@ return {
          underline = true,
          severity_sort = true,
       })
+      vim.o.pumheight = 100 -- Limit popup menu height
 
       local capabilities = blink_cmp.get_lsp_capabilities() -- Blink.cmp capabilities
       local on_attach = function(_, _) end -- Keybindings handled externally

@@ -53,5 +53,6 @@ return {
 
    config = function(_, opts)
       require("catppuccin").setup(opts)
+      -- Do not activate the colorscheme here
    end,
 }

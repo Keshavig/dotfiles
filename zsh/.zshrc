@@ -3,6 +3,7 @@ export PATH="$HOME/.config/emacs/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.carg
 export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 export PATH=$HOME/.config/rofi/scripts:$PATH
 export PATH=$HOME/.config/rofi/applets/bin:$PATH
+export PATH=$HOME/.local/include/imgui:$HOME/.local/include/imgui/backends/:$PATH
 
 
 # History settings
@@ -28,18 +29,25 @@ autoload -U colors && colors
 
 # DOOM ONE
 # PROMPT='%F{#ff6c6b}[%F{#ecbe7b}%n%F{#98be65}!%F{#51afef}%m %F{#a9a1e1}%1~ %F{#ff6c6b}]%f%F{#c678dd} -> '
+# PROMPT='%F{#ff6c6b}[%F{#ecbe7b}%n%F{#98be65}!%F{#51afef}%m %F{#a9a1e1}%1~ %F{#ff6c6b}]%f%F{#c678dd}$ '
 
 # GRUVBOX
 # PROMPT='%F{#fb4934}[%F{#fabd2f}%n%F{#b8bb26}!%F{#83a598}%m %F{#d3869b}%1~ %F{#fb4934}]%f%F{#8ec07c} -> '
 
 # TOKYONIGHT
-# PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7} -> '
+PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7}   -> '
+#  PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7}  -> '
+# PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7} [-_-] -> '
+
+# PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7}$ '
+
+# PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7}   -> '
 
 # ROSE-PINE
 #PROMPT='%F{#eb6f92}[%F{#ea9d34}%n%F{#286983}!%F{#9ccfd8}%m %F{#c4a7e7}%1~ %F{#eb6f92}]%f%F{#908caa} -> '
 
 # Catppuccin
-PROMPT='%F{#f38ba8}[%F{#f9e2af}%n%F{#a6e3a1}!%F{#89b4fa}%m %F{#b4befe}%1~ %F{#f38ba8}]%f%F{#74c7ec} -> '
+# PROMPT='%F{#f38ba8}[%F{#f9e2af}%n%F{#a6e3a1}!%F{#89b4fa}%m %F{#b4befe}%1~ %F{#f38ba8}]%f%F{#74c7ec} -> '
 
 # Monokai Pro
 # PROMPT='%F{#ff6188}[%F{#ffd866}%n%F{#a9dc76}!%F{#78dce8}%m %F{#ab9df2}%1~ %F{#ff6188}]%f%F{#3399cc} -> '
@@ -48,11 +56,14 @@ PROMPT='%F{#f38ba8}[%F{#f9e2af}%n%F{#a6e3a1}!%F{#89b4fa}%m %F{#b4befe}%1~ %F{#f3
 # DRACULA 
 # PROMPT='%F{#ff5555}[%F{#fafa8c}%n%F{#50fa7b}!%F{#8be9fd}%m %F{#bd93f9}%1~ %F{#ff5555}]%f%F{#6272a4} -> '
 
+bindkey -s '^F' "tmux-sessionizer\n" # ^F = ctrl+f
+bindkey -s '^@' "source ~/.zshrc\n" # ^@ = ctrl+shift + Space
+
 # For syntax highlighting
 ### ALIASES ###
-alias lsa="exa -al"
+alias ls="exa -al"
 # alias ls="exa --icons=always"
-alias ls="ls --color=always"
+# alias ls="ls --color=always"
 alias edit='nvim $(fzf --preview "bat --style=numbers --color=always --line-range :500 {} 2>/dev/null")'
 alias emacs="emacsclient -c -a 'emacs'"
 
@@ -64,10 +75,15 @@ alias mkdir="mkdir -pv"
 alias mv="mv -i"
 alias cp="cp -i"
 alias rm="rm -i"
-alias rmrn="rm"
+alias rmrn="/usr/bin/rm"
+alias gn="goodnight"
+alias ff="fastfetch"
 
 # alias mupdf="mupdf -C '#1e1f28'"
 alias gdbq="gdb --quiet"
 
 source ~/.config/zshPlugins/fsh/fast-syntax-highlighting.plugin.zsh
 source ~/.config/zshPlugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# sarchi
+fastfetch

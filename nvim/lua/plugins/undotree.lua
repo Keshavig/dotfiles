@@ -1,7 +1,9 @@
 return {
   "mbbill/undotree",
-  cmd = "UndotreeToggle",  -- Lazy-load on command
-  keys = {                -- Optional, set the keybinding directly for speed
-    { "n", "ut", ":UndotreeToggle | UndotreeFocus | vertical resize 50<CR>", { noremap = true, silent = true } }
+  config = function()
+    vim.g.undotree_WindowLayout = 2
+  end,
+  keys = {
+    { "<leader>ut", "<cmd>UndotreeToggle | UndotreeFocus | vertical resize 50<cr>", desc = "Toggle Undotree" },
   },
 }
