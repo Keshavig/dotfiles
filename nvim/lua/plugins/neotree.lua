@@ -1,28 +1,30 @@
 return {
-  "nvim-neo-tree/neo-tree.nvim",
-  enabled = true, -- Enable the plugin
-  event = "VeryLazy", -- Load the plugin lazily
-  opts = {
-    filesystem = {
-      follow_current_file = true, -- Automatically highlight the current file
-      hijack_netrw = true, -- Replace netrw with neo-tree
-      hijack_netrw_behaviour = "open_current",
+    'nvim-neo-tree/neo-tree.nvim',
+    -- cmd = 'Neotree',
+    event = "VeryLazy",
+    init = function()
+        vim.api.nvim_create_autocmd('BufEnter', {
+            -- make a group to be able to delete it later
+            group = vim.api.nvim_create_augroup('NeoTreeInit', {clear = true}),
+            callback = function()
+                local f = vim.fn.expand('%:p')
+                if vim.fn.isdirectory(f) ~= 0 then
+                    vim.cmd('Neotree current dir=' .. f)
+                    -- neo-tree is loaded now, delete the init autocmd
+                    vim.api.nvim_clear_autocmds{group = 'NeoTreeInit'}
+                end
+            end
+        })
+        -- keymaps
+    end,
+    opts = {
+        filesystem = {
+            hijack_netrw_behavior = 'open_current'
+        }
     },
-    window = {
-      width = 30, -- Set the width of the Neo-tree window
-      mappings = {
-        ["<space>e"] = "toggle_node", -- Map <space> to toggle a node
-      },
-    },
-  },
-  dependencies = {
-    "nvim-lua/plenary.nvim", -- Dependency required for neo-tree
-    "MunifTanjim/nui.nvim", -- UI library for neo-tree
-    "nvim-tree/nvim-web-devicons", -- Optional: Icons for files
-  },
-  config = function()
-    -- Add your custom keybinding here
-    vim.keymap.set("n", "<leader>dj", ":Neotree position=current<CR>", { silent = true, noremap = true })
-    vim.keymap.set("n", "<leader>pf", ":Neotree position=bottom<CR>", { silent = true, noremap = true })
-  end,
+
+    config = function()
+        vim.keymap.set("n", "<leader>dj", ":Neotree position=current<CR>", { silent = true, noremap = true, desc = "Open Neotree"})
+        vim.keymap.set("n", "<leader>pf", ":Neotree position=bottom<CR>", { silent = true, noremap = true})
+    end,
 }

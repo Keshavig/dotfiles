@@ -1,12 +1,21 @@
 return {
-  "folke/tokyonight.nvim",
-  opts = {
-    styles = {
-      comments = { italic = false }, -- Disable italic for comments
-      keywords = { italic = false }, -- Enable italic for keywords (for example)
-      -- These values can be "dark", "transparent" or "normal"
-      floats = "dark", -- Style for floating windows
-      sidebars = "dark",
-    },
-  },
+    "Keshavig/tokyonight.nvim",
+    opts = {
+        style = "night",
+        styles = {
+            comments = { italic = false },
+            keywords = { italic = false },
+        },
+
+        lualine_bold = true,
+        transparent = false,
+        terminal_colors = true,
+
+        cache = true,
+
+        plugins = {
+            all = package.loaded.lazy == nil,
+            auto = true,
+        },
+    }
 }
