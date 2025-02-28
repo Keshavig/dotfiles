@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wal -i $(cat ~/.cache/wall) --cols16

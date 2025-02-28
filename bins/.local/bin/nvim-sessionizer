@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SHELL="sh"
+
+s=$(find ~/projects/ ~/Programming/ ~/github/ ~/.config ~/clones ~/.local/bin/ -mindepth 1 -maxdepth 2 -type d)
+choice=$(echo -e "$s" | rofi -dmenu -p "Choose:")
+
+if [[ -z $choice ]]; then
+    exit 1
+fi
+
+if [[ -n $TMUX ]]; then
+    # If inside a tmux session, open in a new tmux window
+    tmux new-window -c "$choice" -n "$(basename "$choice")" nvim "$choice"
+else
+    # Otherwise, open in a new Kitty terminal
+    cmd="kitty --hold $SHELL -c 'nvim \"$choice\"'"
+    eval "$cmd"
+fi

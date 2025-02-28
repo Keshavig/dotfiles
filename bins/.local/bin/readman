@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ "$1" == "-r" ]]; then
+    choice=$(/usr/bin/ls -l /usr/share/man/man{1..2} | awk '{print $9}' | cut -d '.' -f1 | rofi -dmenu -p "Select")
+    kitty --hold sh -c "man '$choice' | bat --paging=always --language=man"
+else 
+    choice=$(/usr/bin/ls -l /usr/share/man/man{1..5} | awk '{print $9}' | cut -d '.' -f1 | fzf)
+    man "$choice"
+fi
+

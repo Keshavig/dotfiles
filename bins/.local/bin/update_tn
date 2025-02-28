@@ -1,0 +1,33 @@
+#!/bin/bash
+
+REPO_DIR="$HOME/github/tokyonight.nvim"
+# set -x
+
+run_cmd() {
+    printf "running..."
+
+    git fetch upstream
+    git rebase upstream/main
+    git push origin main --force
+    
+    printf "finished..."
+}
+
+
+if [[ "$(pwd)" != "$REPO_DIR" ]]; then
+    echo "Cant run working dir is not ==> " "$REPO_DIR"
+    read -r -p "Do you want to go to that dir and run it (y/n): " choice
+
+    cd "$REPO_DIR" || exit
+
+    if [[ "$choice" == "y" ]]; then
+        run_cmd
+    fi
+
+    cd -
+
+    exit 1
+fi
+
+
+run_cmd

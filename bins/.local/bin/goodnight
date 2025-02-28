@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+printf "Do you want to sleep (y/n): "
+read -r a
+
+if [[ $a == "y" || $a == "Y" ]]; then
+   echo "GoodNight ;)"
+   poweroff
+elif [[ $a == "n" || $a == "N" ]]; then
+   echo "You should sleep now (-.-)"
+else
+   echo "You seem sleepy"
+fi

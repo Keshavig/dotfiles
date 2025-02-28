@@ -1,89 +1,94 @@
 # EXPORTS
+
 export PATH="$HOME/.config/emacs/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 export PATH=$HOME/.config/rofi/scripts:$PATH
 export PATH=$HOME/.config/rofi/applets/bin:$PATH
 export PATH=$HOME/.local/include/imgui:$HOME/.local/include/imgui/backends/:$PATH
 
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# History settings
-HISTFILE=~/.zsh_history         # History file location
-HISTSIZE=999999                 # Number of commands to keep in memory
-SAVEHIST=999999                 # Number of commands to keep in file
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-# Append to the history file immediately after each command
-setopt APPEND_HISTORY           # Append new commands to history file, not overwrite
-setopt INC_APPEND_HISTORY       # Save commands as they are entered setopt SHARE_HISTORY
-# Avoid duplicate history entries
-setopt HIST_IGNORE_DUPS         # Ignore duplicate commands
-setopt HIST_IGNORE_ALL_DUPS     # Remove older duplicates in the history file
-setopt HIST_FIND_NO_DUPS        # Avoid showing duplicates in history search
+# Source/Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
 
-# Ensure history is written even if the shell crashes
-setopt HIST_SAVE_NO_DUPS        # Avoid saving duplicates on shell exit
-setopt HIST_REDUCE_BLANKS       # Remove extra blanks in commands
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
-#PROMPT='\e[0;31m[%n@%m %~]$ '
+# Add in snippets
+zinit snippet OMZL::git.zsh
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::command-not-found
+
+# Load completions
+autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+
+# prompt
+
+# eval "$(oh-my-posh init zsh --config $HOME/.config/omp/config.toml)" # Makes my head hurt
 
 autoload -U colors && colors
 
-# DOOM ONE
-# PROMPT='%F{#ff6c6b}[%F{#ecbe7b}%n%F{#98be65}!%F{#51afef}%m %F{#a9a1e1}%1~ %F{#ff6c6b}]%f%F{#c678dd} -> '
-# PROMPT='%F{#ff6c6b}[%F{#ecbe7b}%n%F{#98be65}!%F{#51afef}%m %F{#a9a1e1}%1~ %F{#ff6c6b}]%f%F{#c678dd}$ '
+git_branch() {
+    local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    [[ -n "$branch" ]] && echo " %F{#98be65}( $branch%F{#98be65})"
+}
 
-# GRUVBOX
-# PROMPT='%F{#fb4934}[%F{#fabd2f}%n%F{#b8bb26}!%F{#83a598}%m %F{#d3869b}%1~ %F{#fb4934}]%f%F{#8ec07c} -> '
+autoload -Uz add-zsh-hook
+update_prompt() {
+     PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~'"$(git_branch)"' %F{#f7768e}]%f%F{#bb9af7}$ '
+    # PROMPT='%F{#eb6f92}[%F{#ea9d34}%n%F{#286983}!%F{#9ccfd8}%m %F{#c4a7e7}%1~'"$(git_branch)"' %F{#eb6f92}]%f%F{#908caa}$ '
+    # PROMPT='%F{#ff6c6b}[%F{#ecbe7b}%n%F{#98be65}!%F{#51afef}%m %F{#a9a1e1}%1~'"$(git_branch)"'%F{#ff6c6b}]%f%F{#c678dd}$ '
+}
 
-# TOKYONIGHT
-PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7}   -> '
-#  PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7}  -> '
-# PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7} [-_-] -> '
+add-zsh-hook precmd update_prompt
 
-# PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7}$ '
+# Keybindings
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[w' kill-region
 
-# PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~ %F{#f7768e}]%f%F{#bb9af7}   -> '
+# History
+HISTSIZE=999999
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-# ROSE-PINE
-#PROMPT='%F{#eb6f92}[%F{#ea9d34}%n%F{#286983}!%F{#9ccfd8}%m %F{#c4a7e7}%1~ %F{#eb6f92}]%f%F{#908caa} -> '
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Catppuccin
-# PROMPT='%F{#f38ba8}[%F{#f9e2af}%n%F{#a6e3a1}!%F{#89b4fa}%m %F{#b4befe}%1~ %F{#f38ba8}]%f%F{#74c7ec} -> '
+# Aliases
+# alias ls="exa --color=always"
+alias ls="ls --color=always"
+alias vim='nvim'
+alias c='clear'
 
-# Monokai Pro
-# PROMPT='%F{#ff6188}[%F{#ffd866}%n%F{#a9dc76}!%F{#78dce8}%m %F{#ab9df2}%1~ %F{#ff6188}]%f%F{#3399cc} -> '
-
-
-# DRACULA 
-# PROMPT='%F{#ff5555}[%F{#fafa8c}%n%F{#50fa7b}!%F{#8be9fd}%m %F{#bd93f9}%1~ %F{#ff5555}]%f%F{#6272a4} -> '
-
-bindkey -s '^F' "tmux-sessionizer\n" # ^F = ctrl+f
-bindkey -s '^@' "source ~/.zshrc\n" # ^@ = ctrl+shift + Space
-
-# For syntax highlighting
-### ALIASES ###
-alias ls="exa -al"
-# alias ls="exa --icons=always"
-# alias ls="ls --color=always"
-alias edit='nvim $(fzf --preview "bat --style=numbers --color=always --line-range :500 {} 2>/dev/null")'
-alias emacs="emacsclient -c -a 'emacs'"
-
-# PACMAN ALIASES #
-alias sysup="sudo pacman -Syu --noconfirm && yay -Syu --noconfirm"
-
-# BASIC SHELL ALIASES
-alias mkdir="mkdir -pv"
-alias mv="mv -i"
-alias cp="cp -i"
-alias rm="rm -i"
-alias rmrn="/usr/bin/rm"
-alias gn="goodnight"
-alias ff="fastfetch"
-
-# alias mupdf="mupdf -C '#1e1f28'"
-alias gdbq="gdb --quiet"
-
-source ~/.config/zshPlugins/fsh/fast-syntax-highlighting.plugin.zsh
-source ~/.config/zshPlugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# sarchi
-fastfetch
+# Shell integrations
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+colorscript -r

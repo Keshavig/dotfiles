@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Read the wallpaper path from the file
+WALLPAPER=$(cat ~/.cache/wall)
+
+# Apply it using Hyprpaper
+echo "preload = $WALLPAPER" > ~/.config/hypr/hyprpaper.conf
+echo "wallpaper = , $WALLPAPER" >> ~/.config/hypr/hyprpaper.conf
+
+# Restart Hyprpaper to apply the wallpaper
+pkill hyprpaper
+hyprpaper &

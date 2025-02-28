@@ -1,0 +1,5 @@
+require("personal/scripts")
+require("personal/binds")
+require("personal/theme")
+require("personal./transparency")
+-- require("personal/tmux_setup")

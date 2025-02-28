@@ -1,0 +1,19 @@
+[2025-02-20 10:34:45.109] [info] Using configuration file /home/ke/.config/waybar/config.jsonc
+[2025-02-20 10:34:45.111] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name is not activatable
+[2025-02-20 10:34:45.111] [info] Using CSS file /home/ke/.config/waybar/style.css
+[2025-02-20 10:34:45.121] [info] Hyprland IPC starting
+[2025-02-20 10:34:45.122] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-20 10:34:45.335] [warning] Requested height: 26 is less than the minimum height: 27 required by the modules
+[2025-02-20 10:34:45.335] [info] Bar configured (width: 1350, height: 27) for output: eDP-1
+[2025-02-20 10:35:51.557] [info] Bar configured (width: 1350, height: 26) for output: eDP-1
+[2025-02-20 10:35:51.573] [warning] Requested height: 26 is less than the minimum height: 27 required by the modules
+[2025-02-20 10:35:51.573] [info] Bar configured (width: 1350, height: 27) for output: eDP-1
+[2025-02-20 10:36:03.556] [info] Bar configured (width: 1350, height: 26) for output: eDP-1
+[2025-02-20 10:36:03.573] [warning] Requested height: 26 is less than the minimum height: 27 required by the modules
+[2025-02-20 10:36:03.573] [info] Bar configured (width: 1350, height: 27) for output: eDP-1
+[2025-02-20 10:36:13.339] [warning] Requested height: 27 is less than the minimum height: 34 required by the modules
+[2025-02-20 10:36:13.339] [info] Bar configured (width: 1350, height: 34) for output: eDP-1
+[2025-02-20 10:36:13.352] [info] Bar configured (width: 1350, height: 33) for output: eDP-1
+[2025-02-20 10:36:14.732] [info] Bar configured (width: 1350, height: 30) for output: eDP-1
+[2025-02-20 10:36:14.758] [info] Bar configured (width: 1350, height: 28) for output: eDP-1
+[2025-02-20 10:36:14.790] [info] Bar configured (width: 1350, height: 26) for output: eDP-1

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Lualine by default does not have a doom-one theme support so I made a custom doom-one
+# theme file for lualine and I made this so I can run this whenever lualine updates and
+# deletes my file (I think it deletes when it updates right?)
+cp ~/.local/bin/doom-one.lua ~/.local/share/nvim/lazy/lualine.nvim/lua/lualine/themes/

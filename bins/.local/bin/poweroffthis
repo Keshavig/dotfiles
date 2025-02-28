@@ -1,0 +1,8 @@
+#!/bin/bash
+
+choice=$(rofi -dmenu -p "Do you want to poweroff this pc (y/n)")
+
+if [[ "$choice" == "Y" || "$choice" == "y" ]]; then
+    poweroff;
+    rofi -e "shutting down..."
+fi

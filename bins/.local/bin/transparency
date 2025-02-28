@@ -1,0 +1,19 @@
+#!/bin/bash
+
+KITTY_DIR="$HOME/.config/kitty"
+OPACITY=0.95
+
+if [[ -z "$1" ]]; then
+    echo "available args are 'on' or 'off'"
+fi
+
+if [[ -n "$2" ]]; then
+    OPACITY=$2
+fi
+
+if [[ "$1" == "on" ]]; then
+    sed -i "s|background_opacity.*|background_opacity $OPACITY|g" "$KITTY_DIR/kitty.conf" # KITTY
+elif [[ "$1" = "off" ]]; then
+
+    sed -i "s|background_opacity.*|background_opacity 1|g" "$KITTY_DIR/kitty.conf"
+fi

@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Define programming languages and core utils
+languages="cpp c golang python javascript css bash lua"
+core_utils="awk man curl wget clang clang++ awk sed grep ripgrep"
+
+# Combine and sort list, then select with fzf
+selected=$(echo -e "$languages\n$core_utils" | tr ' ' '\n' | sort | fzf)
+
+# Exit if no selection was made
+if [[ -z $selected ]]; then
+    echo "No selection made."
+    exit 1
+fi
+
+echo "Selected: $selected"
+
+# Read query input with backspace support
+read -e -p "Query: " query
+
+# Check if the selected item is a programming language
+if echo "$languages" | tr ' ' '\n' | grep -qs "^$selected$"; then
+    # Use bat for programming languages
+    tmux new-window "curl -s cht.sh/$selected/$(echo "$query" | tr ' ' '+') | bat"
+    # tmux new-window "curl -s cht.sh/$selected/$(echo "$query" | tr ' ' '+') | bat --language=sh --paging=always --color=always"
+else
+    # Use plain curl for core utilities
+    tmux new-window "curl -s cht.sh/$selected~$query"
+fi
