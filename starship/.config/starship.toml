@@ -4,6 +4,7 @@
 # [┣─project❯](bold red) $directory$rust$git_branch$git_state$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
 # [╰─cmd────❯](bold green)
 # """
+command_timeout = 1000000000
 
 [username]
 style_user = "green bold"
@@ -36,7 +37,6 @@ style = "bold blue"
 
 [cmd_duration]
 min_time = 4
-command_timeout = 100000
 show_milliseconds = false
 disabled = false
 style = "bold red"

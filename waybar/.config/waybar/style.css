@@ -9,7 +9,11 @@
     color: #0db9d7;
 }
 
-window#waybar {
+#window {
+    color: #a9a1e1;
+}
+
+#waybar {
     /* background: #0F0F17; */
     /* background: #1f2329; */
     background: #16161e;

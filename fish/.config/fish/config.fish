@@ -82,7 +82,8 @@ alias free='free -m'           # show sizes in MB
 alias grep='grep --color=auto' # colorize output (good for log files)
 alias vim='nvim'
 
-colorscript random
+# colorscript random
+fastfetch
 
 zoxide init fish | source
 starship init fish | source

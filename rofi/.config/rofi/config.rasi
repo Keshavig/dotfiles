@@ -1,9 +1,8 @@
-// nvim: fdm=marker
 
 configuration {
   modes: "window,drun,run,ssh";
-  font: "JetbrainsMono SemiBold 11";
-  drun-display-format: "{name}";
+  font: "JetbrainsMono SemiBold 11.3";
+  drun-display-format: "{icon} {name}";
 }
 
 * {
@@ -22,7 +21,7 @@ configuration {
 }
 
 window {
-  fullscreen: true;
+  fullscreen: false;
   padding: 20% 30%;       // you might want to ajust these to resize rofi.
   transparency: "real";
   background-color: @bgt;
@@ -37,7 +36,7 @@ listview {
 
 scrollbar {
     width:        0px;
-    border-radius:       0px;
+    border-radius:0px;
     handle-color: @fg;
     handle-width: 0px;
     padding:      0 0;
@@ -129,3 +128,5 @@ textbox-prompt-sep {
     margin:     0 0.3em 0 0;
 }
 // }}}
+
+@import "~/.cache/wal/colors-rofi-dark.rasi"

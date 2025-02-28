@@ -1,3 +1,3 @@
 #!/bin/bash
 
-wal -i $(cat ~/.cache/wall) --cols16
+wal -i "$(cat ~/.cache/wall)" --cols16

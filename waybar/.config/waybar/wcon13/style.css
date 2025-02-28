@@ -1,19 +1,18 @@
 * {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 #custom-icon {
-    font-size: 15px;
+    font-size: 17px;
     color: #0db9d7;
 }
 
 window#waybar {
-    /* background: #0F0F17; */
+     background: #0F0F17;
     /* background: #1f2329; */
-    /* background: #16161e; */
-    background: rgba(0,0,0,1.4);
+       /*  background: #16161e; */
     /* border: 2px solid #1AFFFFFF;  */
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px; /* Remove rounded corners */
@@ -106,7 +105,7 @@ tooltip {
     color: #e0af68;
     /* color: #7dcfff; */
     font-weight: bold;
-    font-size: 13px;
+    font-size: 13.2px;
     padding-right: 0px;
     padding-left: 4px;
 }
@@ -114,7 +113,7 @@ tooltip {
 #battery {
     color:#7dcfff;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 13.2px;
     padding-right: 0px;
     padding-left: 4px;
 
@@ -128,7 +127,7 @@ tooltip {
 #custom-kernel {
     color:#9ece6a;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 13.2px;
     padding-right: 0px;
     padding-left: 4px;
 
@@ -150,7 +149,7 @@ tooltip {
 #clock {
     /* color: #7dcfff; */
     color: #9d7cd8;
-    font-size: 13px;
+    font-size: 13.2px;
     font-weight: bold;
     font-family: "JetBrains Mono Nerd Font";
 
@@ -161,7 +160,7 @@ tooltip {
 }
  #custom-pipewire {
     color: #ff9e64;
-    font-size: 13px;
+    font-size: 13.2px;
     font-weight: bold;
 
     transition: all 0.005s ease-in-out;
@@ -177,12 +176,12 @@ tooltip {
 
 #custom-poweroffLogo {
     color: #bbc2cf;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 #custom-packages {
     font-weight: bold;
-    font-size: 13px;
+    font-size: 13.2px;
     /* color: #db4b4b; */
     /* color: #7dcfff; */
     color: #abb2bf;
@@ -195,7 +194,7 @@ tooltip {
 
 #cpu {
     font-weight: bold;
-    font-size: 13px;
+    font-size: 13.2px;
     /* color: #db4b4b; */
     /* color: #7dcfff; */
     color: #f7768e;
@@ -208,7 +207,7 @@ tooltip {
 
 #memory {
     font-weight: bold;
-    font-size: 13px;
+    font-size: 13.2px;
     color: #9ece6a;
 
 

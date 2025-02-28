@@ -98,7 +98,8 @@
         // "format": "<span weight='bold' color='#ff9e64'>[] {class}</span>",
         // "format": "<span weight='bold' color='#a9a1e1'>[] {class}</span>",
         // "format": "<span size='10095' weight='bold' color='#a9a1e1'>[] {title}</span>",
-        "format": "<span size='10095' weight='bold' color='#a9a1e1'>[] {title}</span>",
+        //"format": "<span size='10095' weight='bold' color='#a9a1e1'>[] {title}</span>",
+        "format": "<span size='10095' weight='bold'>[] {title}</span>",
         // "format": "<span color='#a9a1e1' rise='-4444'>{}</span>",
         "max-length": 120
     },
