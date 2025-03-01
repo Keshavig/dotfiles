@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 # Make sure to install rofi brightnessctl and sct
 # for arch based distros
 # sudo pacman -S rofi brightnessctl sct

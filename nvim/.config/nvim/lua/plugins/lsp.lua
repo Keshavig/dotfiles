@@ -13,6 +13,7 @@ return {
             "rust_analyzer",
             "bashls",
             "zls",
+            "hls",
             "clangd",
             "html",
             "jsonls",

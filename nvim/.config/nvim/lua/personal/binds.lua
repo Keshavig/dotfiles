@@ -91,6 +91,7 @@ end)
 vim.keymap.set("t", "<ESC>", "<c-\\><c-n>")
 vim.keymap.set("n", "<leader>ef", "<CMD>Floaterminal<CR>", { noremap = true, silent = true, desc = "Open a floating terminal" })
 vim.api.nvim_set_keymap("i", "<C-c>", "<Esc>", { noremap = true, silent = true, desc = "Control+C = Escape Key in Insert Mode" })
+vim.keymap.set('n', '<C-i>', ":normal! v$<CR>", { noremap = true, silent = true })
 
 --[[ 
 "grn" is mapped in Normal mode to |vim.lsp.buf.rename()|

@@ -83,7 +83,9 @@ alias grep='grep --color=auto' # colorize output (good for log files)
 alias vim='nvim'
 
 # colorscript random
-fastfetch
+# fastfetch
 
 zoxide init fish | source
 starship init fish | source
+
+eval "$(zoxide init --cmd cd fish)"

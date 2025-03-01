@@ -1,1 +1,25 @@
 #!/bin/sh
+
+killall waybar
+WaybarFile="$HOME/.cache/currentWaybarTheme"
+KittyConfig="$HOME/.config/kitty/kitty.conf"
+NvimFile="$HOME/.config/nvim/lua/personal/theme.lua"
+
+
+# Set Pywal16
+~/.local/bin/pywall
+
+# Waybar
+echo "7" > "$WaybarFile"
+~/.local/bin/change_waybar_style -r
+
+# KITTY
+sed -i "/^include.*/d" "$KittyConfig"
+sed -i '1s|^|include ~/.cache/wal/colors-kitty.conf \n|' "$KittyConfig"
+
+# NVIM
+sed -i "/^vim.cmd.*/d" "$NvimFile"
+sed -i '1s|^|vim.cmd("colorscheme pywal16")\n|' "$NvimFile"
+
+# Set Transparency to Kitty
+~/.local/bin/transparency on

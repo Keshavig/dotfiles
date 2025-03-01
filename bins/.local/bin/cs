@@ -1,14 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Define programming languages and core utils
 languages="cpp c golang python javascript css bash lua"
 core_utils="awk man curl wget clang clang++ awk sed grep ripgrep"
 
 # Combine and sort list, then select with fzf
-selected=$(echo -e "$languages\n$core_utils" | tr ' ' '\n' | sort | fzf)
+selected=$(printf "%s\n%s" "$languages" "$core_utils" | tr ' ' '\n' | sort | fzf)
 
 # Exit if no selection was made
-if [[ -z $selected ]]; then
+if [ -z "$selected" ]; then
     echo "No selection made."
     exit 1
 fi
@@ -16,7 +16,7 @@ fi
 echo "Selected: $selected"
 
 # Read query input with backspace support
-read -e -p "Query: " query
+read -r query
 
 # Check if the selected item is a programming language
 if echo "$languages" | tr ' ' '\n' | grep -qs "^$selected$"; then

@@ -158,13 +158,13 @@ tooltip {
 }
 
  #custom-pipewire {
-    color: @color2;
+    color: @color11;
     font-size: 13px;
     font-weight: bold;
 
     transition: all 0.005s ease-in-out;
     border: none;
-    border-bottom: 2px solid @color4;
+    border-bottom: 2px solid @color11;
     border-bottom-width: 2px;
 }
 
