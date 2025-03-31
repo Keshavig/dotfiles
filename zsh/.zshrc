@@ -36,10 +36,6 @@ autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
-# prompt
-
-# eval "$(oh-my-posh init zsh --config $HOME/.config/omp/config.toml)" # Makes my head hurt
-
 autoload -U colors && colors
 
 git_branch() {
@@ -86,9 +82,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # alias ls="exa --color=always"
 alias ls="ls --color=always"
 alias vim='nvim'
-alias c='clear'
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-colorscript -r
+# colorscript -r

@@ -43,7 +43,7 @@ vim.cmd("highlight ColorColumn ctermbg=0 guibg=#282c34")
 vim.cmd("set hlsearch")
 vim.cmd("set termguicolors")
 vim.cmd("set nu")
-vim.cmd("set guicursor=")
+-- vim.cmd("set guicursor=")
 vim.cmd("set nofsync")
 
 vim.g.autoformat = false

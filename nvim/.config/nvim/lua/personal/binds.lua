@@ -91,7 +91,16 @@ end)
 vim.keymap.set("t", "<ESC>", "<c-\\><c-n>")
 vim.keymap.set("n", "<leader>ef", "<CMD>Floaterminal<CR>", { noremap = true, silent = true, desc = "Open a floating terminal" })
 vim.api.nvim_set_keymap("i", "<C-c>", "<Esc>", { noremap = true, silent = true, desc = "Control+C = Escape Key in Insert Mode" })
-vim.keymap.set('n', '<C-i>', ":normal! v$<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>c', "<CMD>Compile<CR>",      { noremap = true, desc = "Emacs like compile mode" })
+vim.keymap.set('n', '<leader>cn', "<CMD>NextError<CR>",   { noremap = true, silent = true, desc = "Emacs like compile mode" })
+vim.keymap.set('n', '<leader>cp', "<CMD>PrevError<CR>",   { noremap = true, silent = true, desc = "Emacs like compile mode" })
+vim.keymap.set('n', '<leader>ti', '<CMD>TodoTrouble<CR>', { noremap = true, silent = true, desc = "Open all Todo's/Note's into trouble window"})
+vim.keymap.set('n', '<leader>tu', '<CMD>TodoTelescope<CR>', { noremap = true, silent = true, desc = "Open all Todo's/Note's into trouble window"})
+vim.keymap.set('n', '<leader>tn', '<CMD>Trouble diagnostics next<CR>', { noremap = true, silent = true, desc = "Jump to next error in Trouble's diagnostics list"} )
+vim.keymap.set('n', '<leader>tp', '<CMD>Trouble diagnostics prev<CR>', { noremap = true, silent = true, desc = "Jump to next error in Trouble's diagnostics list"} )
+
+
+-- vim.keymap.set('n', '<C-i>', ":normal! v$<CR>", { noremap = true, silent = true })
 
 --[[ 
 "grn" is mapped in Normal mode to |vim.lsp.buf.rename()|

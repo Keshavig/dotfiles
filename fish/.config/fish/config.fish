@@ -67,7 +67,7 @@ end
 ### ALIASES ###
 # Changing "ls" to "eza"
 alias ls='ls --color=always'
-alias ls='exa --color=always -al'
+# alias ls='exa --color=always -al'
 alias pipes.sh='pipes.sh -p 10 -r 200000000000 -R'
 
 # get fastest mirrors
