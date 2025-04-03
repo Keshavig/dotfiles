@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-NUM_OF_STYLES=15
+NUM_OF_STYLES=16
 FILE="$HOME/.cache/currentWaybarTheme"
 DIR="$HOME/.config/waybar"
 NAME="wcon"

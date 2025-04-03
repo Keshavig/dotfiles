@@ -20,15 +20,14 @@ return {
             ghost_text = { enabled = false },
             documentation = { treesitter_highlighting = true },
             menu = {
-                --border = "rounded",
+                -- border = "rounded",
                 scrollbar = false,
-                direction_priority = { "s", "n" },
                 winhighlight = "Normal:Normal,FloatBorder:CmpBorder,CursorLine:Visual,Search:None",
                 draw = {
                     treesitter = { "lsp" },
-                    columns = { { "kind_icon" }, { "label" } },
+                    -- columns = { { "kind_icon" }, { "label" } },
                     -- columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
-                    -- columns = { { "kind_icon", "kind" }, { "label", "label_description" } },
+                    columns = { { "kind_icon", "kind" }, { "label", "label_description" } },
                 },
             },
         },

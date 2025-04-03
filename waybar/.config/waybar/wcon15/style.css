@@ -8,27 +8,27 @@
 
 #custom-icon {
     font-size: 17px;
-    color: #0db9d7;
+    color: #83a598;
 }
 
 window#waybar {
     /* background: #0F0F17; */
     /* background: #1f2329; */
-    background: #16161e;
+    background: #3c3836;
     /* border: 2px solid #1AFFFFFF;  */
     border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 tooltip {
-    background: #171717;
-    color: #7dcfff;
+    background: #282828;
+    color: #83a598;
     border-radius: 0px; /* Remove rounded corners */
-    border: 2px solid #101a24;
+    border: 2px solid #fabd2f;
 }
 
 
 #hyprland-window {
-    color: #f7768e;
+    color: #fc9487;
 }
 
 /* #custom-comma { */
@@ -37,7 +37,7 @@ tooltip {
 /**/
 #workspaces {
     background: rgba(23, 23, 23, 0.0);
-    color: #888789;
+    color: #458588;
     box-shadow: none;
     text-shadow: none;
     border-radius: 0px; /* Remove rounded corners */
@@ -45,13 +45,12 @@ tooltip {
     padding-left: 4px;
     padding-right: 4px;
     padding-top: 1px;
-    /* width: 100%;  */
 }
 
 #workspaces button {
     background: rgba(23, 23, 23, 0.0);
     /* color: #bbc2cf; */
-    color: #7dcfff;
+    color: #076678;
     box-shadow: none;
     text-shadow: none;
     border-radius: 0px; /* Remove rounded corners */
@@ -61,13 +60,13 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: #7aa2f7;
+    color: #fabd2f;
     transition: all 0.005s ease-in-out;
     padding-left: 4px;
     padding-right: 4px;
 
     border: none; /* Remove all borders */
-    border-bottom: 2px solid #7aa2f7; /* Keep only the underline */
+    border-bottom: 2px solid #fabd2f; /* Keep only the underline */
 }
 
 #workspaces button.empty {

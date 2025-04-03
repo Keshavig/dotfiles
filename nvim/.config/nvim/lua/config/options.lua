@@ -49,3 +49,4 @@ vim.cmd("set nofsync")
 vim.g.autoformat = false
 
 vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#7aa2f7", bg = "NONE" })
+vim.cmd("set cinoptions=4N")
