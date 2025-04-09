@@ -1,22 +1,17 @@
 return {
-    --"Keshavig/tokyonight.nvim",
-    "Keshavig/tokyonight.nvim",
-    opts = {
-        style = "night",
-        styles = {
-            comments = { italic = false },
-            keywords = { italic = false },
-        },
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {
+      style = "night",
+      styles = {
+          -- comments  =  { italic = false },
+          -- functions =  { italic = false },
+          -- keywords  =  { italic = false },
+          -- variables =  { italic = false },
 
-        lualine_bold = true,
-        transparent = false,
-        terminal_colors = true,
-
-        cache = true,
-
-        plugins = {
-            all = package.loaded.lazy == nil,
-            auto = true,
-        },
-    }
+          sidebars = "dark";
+          floats   = "dark";
+      },
+  },
 }

@@ -98,6 +98,8 @@ vim.keymap.set('n', '<leader>ti', '<CMD>TodoTrouble<CR>', { noremap = true, sile
 vim.keymap.set('n', '<leader>tu', '<CMD>TodoTelescope<CR>', { noremap = true, silent = true, desc = "Open all Todo's/Note's into trouble window"})
 vim.keymap.set('n', '<leader>tn', '<CMD>Trouble diagnostics next<CR>', { noremap = true, silent = true, desc = "Jump to next error in Trouble's diagnostics list"} )
 vim.keymap.set('n', '<leader>tp', '<CMD>Trouble diagnostics prev<CR>', { noremap = true, silent = true, desc = "Jump to next error in Trouble's diagnostics list"} )
+vim.keymap.set('n', '<leader>sl', '<CMD>LspStop<CR>', { noremap = true, silent = true, desc = "Stop the LSP"})
+vim.keymap.set('n', '<leader>ls', '<CMD>LspStart<CR>', { noremap = true, silent = true, desc = "Start the LSP"})
 
 
 -- vim.keymap.set('n', '<C-i>', ":normal! v$<CR>", { noremap = true, silent = true })

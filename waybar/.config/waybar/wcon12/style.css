@@ -16,14 +16,14 @@
 #waybar {
     /* background: #0F0F17; */
     /* background: #1f2329; */
-    background: #1a1b26;
+    background: #282c34;
     /* border: 2px solid #1AFFFFFF;  */
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px; /* Remove rounded corners */
 }
 
 tooltip {
-    background: #171717;
+    background: #282c34;
     color: #7dcfff;
     border-radius: 0px; /* Remove rounded corners */
     border: 2px solid #101a24;

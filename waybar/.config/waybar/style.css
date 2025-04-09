@@ -5,37 +5,42 @@
 }
 
 #custom-icon {
-    font-size: 16px;
-    color: #fe8019;
+    font-size: 15px;
+    color: #0db9d7;
 }
 
 #window {
-    color: #d3869b;
+    color: #a9a1e1;
 }
 
 #waybar {
     /* background: #0F0F17; */
     /* background: #1f2329; */
-    background: #32302f;
+    background: #282c34;
+    /* border: 2px solid #1AFFFFFF;  */
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px; /* Remove rounded corners */
 }
 
 tooltip {
-    background: #1d2021;
-    color: #b16286;
+    background: #282c34;
+    color: #7dcfff;
     border-radius: 0px; /* Remove rounded corners */
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid #101a24;
 }
 
 
 #hyprland-window {
-    color: #fb9434;
+    color: #f7768e;
 }
 
+/* #custom-comma { */
+/*     color: #A; */
+/* } */
+/**/
 #workspaces {
     background: rgba(23, 23, 23, 0.0);
-    color: #83a598;
+    color: #888789;
     box-shadow: none;
     text-shadow: none;
     border-radius: 0px; /* Remove rounded corners */
@@ -43,12 +48,13 @@ tooltip {
     padding-left: 4px;
     padding-right: 4px;
     padding-top: 1px;
+    /* width: 100%;  */
 }
 
 #workspaces button {
     background: rgba(23, 23, 23, 0.0);
     /* color: #bbc2cf; */
-    color: #458588;
+    color: #7dcfff;
     box-shadow: none;
     text-shadow: none;
     border-radius: 0px; /* Remove rounded corners */
@@ -58,26 +64,26 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: #83a598;
+    color: #7aa2f7;
     transition: all 0.005s ease-in-out;
     padding-left: 4px;
     padding-right: 4px;
 
-    border-bottom: 2px solid #83a598; /* Keep only the underline */
     border: none; /* Remove all borders */
+    border-bottom: 2px solid #7aa2f7; /* Keep only the underline */
 }
 
 #workspaces button.empty {
     /* color: #e0af68; */
     /* color: #9ece6a; */
-    color: #d5c4a1;
+    color: #bbc2cf;
     transition: all 0.3s ease;
     padding-left: 4px;
     padding-right: 4px;
 
     transition: all 0.005s ease-in-out;
     border: none;
-    border-bottom: 2px solid #d5c4a1;
+    border-bottom: 2px solid #bbc2cf;
 }
 
 /* Is equal to inactive workspaces */
@@ -90,7 +96,7 @@ tooltip {
 
 #workspaces button:hover {
     background: none;
-    color: #bdae93;
+    color: #f7768e;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
 }
@@ -99,8 +105,17 @@ tooltip {
     min-height: 10px;
 }
 
+#network {
+    color: #e0af68;
+    /* color: #7dcfff; */
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 0px;
+    padding-left: 4px;
+}
+
 #battery {
-    color:#458588;
+    color:#7dcfff;
     font-weight: bold;
     font-size: 13px;
     padding-right: 0px;
@@ -109,46 +124,75 @@ tooltip {
 
     transition: all 0.005s ease-in-out;
     border: none; /* Remove all borders */
-    border-bottom: 2px solid #458588; /* Keep only the underline */
+    border-bottom: 2px solid #7dcfff; /* Keep only the underline */
     border-bottom-width: 2px;
+}
+
+#custom-kernel {
+    color:#9ece6a;
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 0px;
+    padding-left: 4px;
+
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #9ece6a; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#custom-batProp {
+    color: #1abc9c;
+}
+
+#custom-clockProp {
+    color: #9d7cd8;
 }
 
 #clock {
     /* color: #7dcfff; */
-    color: #b16286;
+    color: #9d7cd8;
     font-size: 13px;
     font-weight: bold;
     font-family: "JetBrains Mono Nerd Font";
 
     transition: all 0.005s ease-in-out;
     border: none; /* Remove all borders */
-    border-bottom: 2px solid #b16286; /* Keep only the underline */
+    border-bottom: 2px solid #9d7cd8; /* Keep only the underline */
     border-bottom-width: 2px;
 }
  #custom-pipewire {
-    color: #bdae93;
+    color: #ff9e64;
     font-size: 13px;
     font-weight: bold;
 
     transition: all 0.005s ease-in-out;
     border: none;
-    border-bottom: 2px solid #bdae93;
+    border-bottom: 2px solid #ff9e64;
     border-bottom-width: 2px;
 }
 
+#custom-volProp {
+    color: #e0af68;
+}
+
+
 #custom-poweroffLogo {
-    color: #ebdbb2;
+    color: #bbc2cf;
     font-size: 15px;
 }
 
 #custom-packages {
     font-weight: bold;
     font-size: 13px;
-    color: #fb9434;
+    /* color: #db4b4b; */
+    /* color: #7dcfff; */
+    color: #abb2bf;
 
     transition: all 0.005s ease-in-out;
     border: none; /* Remove all borders */
-    border-bottom: 2px solid #fb9434; /* Keep only the underline */
+    border-bottom: 2px solid #abb2bf; /* Keep only the underline */
     border-bottom-width: 2px;
 }
 
@@ -157,23 +201,23 @@ tooltip {
     font-size: 13px;
     /* color: #db4b4b; */
     /* color: #7dcfff; */
-    color: #fc9690;
+    color: #f7768e;
 
     transition: all 0.005s ease-in-out;
     border: none; /* Remove all borders */
-    border-bottom: 2px solid #fc9690; /* Keep only the underline */
+    border-bottom: 2px solid #f7768e; /* Keep only the underline */
     border-bottom-width: 2px;
 }
 
 #memory {
     font-weight: bold;
     font-size: 13px;
-    color: #8ec07c;
+    color: #9ece6a;
 
 
     transition: all 0.005s ease-in-out;
     border: none; /* Remove all borders */
-    border-bottom: 2px solid #8ec07c; /* Keep only the underline */
+    border-bottom: 2px solid #9ece6a; /* Keep only the underline */
     border-bottom-width: 2px;
 }
 

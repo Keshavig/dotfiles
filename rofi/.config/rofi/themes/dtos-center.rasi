@@ -7,9 +7,11 @@
 
 * {
     background-color:            #16161e;
-    border-color:                #51afef;
+    // border-color:                #51afef;
+    border-color:                #282c34;
+    border-radius:               8px;
     text-color:                  #bbc2cf;
-    font:                        "JetBrainsMono NF 10";
+    font:                        "JetBrainsMono NF Bold 10";
     prompt-font:                 "JetBrainsMono NF 10";
     prompt-background:           #51afef;
     prompt-foreground:           #16161e;
@@ -67,7 +69,7 @@
 }
 #inputbar {
     spacing:    0;
-    padding:    1px ;
+    padding:    1px;
 }
 #case-indicator {
     spacing:    0;
@@ -90,10 +92,11 @@ element-text {
     text-color:       inherit;
 }
 
-/* Not actually relevant for this configuration, but it might
-be useful to someone having issues with their icons' background color
-
 element-icon {
     background-color: inherit;
 }
+
+/* Not actually relevant for this configuration, but it might
+be useful to someone having issues with their icons' background color
+
 */

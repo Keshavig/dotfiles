@@ -1,3 +1,8 @@
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
+--
+
 vim.o.clipboard = "unnamedplus"
 vim.o.ignorecase = true
 vim.opt.iskeyword:append("-")
@@ -27,11 +32,21 @@ vim.o.cursorline = true
 vim.o.swapfile = false
 vim.o.signcolumn = "yes"
 vim.o.cmdheight = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.o.completeopt = menuone, noinsert, noselect
+-- vim.o.statuscolumn = "%l"
+
+-- vim.opt.colorcolumn = "80"
+
 vim.cmd("highlight ColorColumn ctermbg=0 guibg=#282c34")
 vim.cmd("set hlsearch")
 vim.cmd("set termguicolors")
 vim.cmd("set nu")
+-- vim.cmd("set guicursor=")
 vim.cmd("set nofsync")
+
+vim.g.autoformat = false
+
+vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#7aa2f7", bg = "NONE" })
 vim.cmd("set cinoptions=sN")
-vim.cmd("set guicursor=")

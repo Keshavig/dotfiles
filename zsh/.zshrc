@@ -46,11 +46,11 @@ git_branch() {
 
 autoload -Uz add-zsh-hook
 update_prompt() {
-    # PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~'"$(git_branch)"' %F{#f7768e}]%f%F{#bb9af7}$ '
+    PROMPT='%F{#f7768e}[%F{#e0af68}%n%F{#9ece6a}!%F{#7aa2f7}%m %F{#a9a1e1}%1~'"$(git_branch)"'%F{#f7768e}]%f%F{#bb9af7}$ '
     # PROMPT='%F{#eb6f92}[%F{#ea9d34}%n%F{#286983}!%F{#9ccfd8}%m %F{#c4a7e7}%1~'"$(git_branch)"' %F{#eb6f92}]%f%F{#908caa}$ '
     # PROMPT='%F{#ff6c6b}[%F{#ecbe7b}%n%F{#98be65}!%F{#51afef}%m %F{#a9a1e1}%1~'"$(git_branch)"'%F{#ff6c6b}]%f%F{#c678dd}$ '
     # PROMPT='%F{#fe8019}[%F{#d79921}%n%F{#797440e}%F{#f78b7f}@%F{#458588}%m %F{#d3869b}%1~'"$(git_branch)"'%F{#fe8019}]%f%F{#f2e5bc}> '
-      PROMPT='%F{#fe8019}[%F{#d79921}%n@%F{#d3869b}%1~'"$(git_branch)"'%F{#fe8019}]%f%F{#f2e5bc}> '
+    # PROMPT='%F{#fe8019}[%F{#d79921}%n@%F{#d3869b}%1~'"$(git_branch)"'%F{#fe8019}]%f%F{#f2e5bc}> '
 }
 
 add-zsh-hook precmd update_prompt
@@ -85,6 +85,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # alias ls="exa --color=always"
 alias ls="ls --color=always"
 alias make='make -j4'
+alias cman="cppman"
+alias sudo='doas'
 
 # Shell integrations
 eval "$(fzf --zsh)"

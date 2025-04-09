@@ -10,8 +10,17 @@ return {
       require("mason-lspconfig").setup({
          ensure_installed = {
             "lua_ls",
+            "rust_analyzer",
             "bashls",
+            "zls",
+            "hls",
             "clangd",
+            "html",
+            "jsonls",
+            "pylsp",
+            "gopls",
+            "cssls",
+            "ts_ls",
          },
       })
 
@@ -24,14 +33,12 @@ return {
       -- Diagnostics configuration
       vim.diagnostic.config({
          update_in_insert = true,
-         -- virtual_text = { spacing = 4, prefix = "●"},
-         virtual_text = { spacing = 4 },
+         virtual_text = { spacing = 4, prefix = "●" },
          float = { border = "rounded" },
          signs = true,
          underline = true,
          severity_sort = true,
       })
-
       vim.o.pumheight = 10000000 -- Limit popup menu height
 
       local capabilities = blink_cmp.get_lsp_capabilities() -- Blink.cmp capabilities

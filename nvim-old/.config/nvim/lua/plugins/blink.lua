@@ -20,7 +20,7 @@ return {
             ghost_text = { enabled = false },
             documentation = { treesitter_highlighting = true },
             menu = {
-                -- border = "rounded",
+                border = "single",
                 scrollbar = false,
                 winhighlight = "Normal:Normal,FloatBorder:CmpBorder,CursorLine:Visual,Search:None",
                 draw = {
