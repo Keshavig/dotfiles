@@ -1,7 +1,6 @@
 # EXPORTS
 
-export PATH="$HOME/.config/emacs/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
+export PATH="$HOME/.config/emacs/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH" export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 export PATH=$HOME/.config/rofi/scripts:$PATH
 export PATH=$HOME/.config/rofi/applets/bin:$PATH
 export PATH=$HOME/.local/include/imgui:$HOME/.local/include/imgui/backends/:$PATH

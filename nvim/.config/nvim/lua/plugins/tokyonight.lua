@@ -5,10 +5,10 @@ return {
   opts = {
       style = "night",
       styles = {
-          -- comments  =  { italic = false },
-          -- functions =  { italic = false },
-          -- keywords  =  { italic = false },
-          -- variables =  { italic = false },
+          comments  =  { italic = false },
+          functions =  { italic = false },
+          keywords  =  { italic = false },
+          variables =  { italic = false },
 
           sidebars = "dark";
           floats   = "dark";

@@ -3,6 +3,39 @@
 -- From lazynvim, am getting the depriciated warning but the new one does not work, so check * for update:
 -- * = https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
+vim.keymap.set("n", "<leader>fs", function()
+    require("fzf-lua").files({
+        previewer = false,
+        winopts = {
+            width = 0.6,
+        },
+        cwd = vim.fn.expand("~"),
+        fd_opts = "--max-depth 5 --type f",
+    })
+end, { noremap = true, silent = true, desc = "Search files in home directory without preview" })
+
+vim.keymap.set("n", "<leader>fj", function()
+    require("fzf-lua").files({
+        previewer = false,
+        winopts = {
+            width = 0.6,
+        },
+        cwd = vim.fn.expand("../../"),
+        fd_opts = "--max-depth 3 --type f",
+    })
+end, { noremap = true, silent = true, desc = "Search files in current directory without preview" })
+
+vim.keymap.set("n", "<leader>en", function()
+    require("fzf-lua").files({
+        previewer = false,
+        winopts = { width = 0.6, },
+        cwd = vim.fn.stdpath("config"),
+    })
+end, { noremap = true, silent = true, desc = "Search files in Neovim config directory" })
+
+vim.keymap.set("n", "<leader>ff", ":FzfLua files<CR>", {noremap = true, silent = true, desc = "Find files in current directory (FZF)" })
+-- vim.api.nvim_set_keymap('n', '<leader>fi', ':lua require("conform").format()<CR>', { noremap = true, silent = true, desc = 'Format current buffer'})
+
 local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
   severity = severity and vim.diagnostic.severity[severity] or nil
@@ -55,6 +88,8 @@ vim.keymap.set('n', '<leader>ti', '<CMD>TodoTrouble<CR>', { noremap = true, sile
 vim.keymap.set('n', '<leader>tu', '<CMD>TodoTelescope<CR>', { noremap = true, silent = true, desc = "Open all Todo's/Note's into trouble window"})
 vim.keymap.set('n', '<leader>tn', '<CMD>Trouble diagnostics next<CR>', { noremap = true, silent = true, desc = "Jump to next error in Trouble's diagnostics list"} )
 vim.keymap.set('n', '<leader>tp', '<CMD>Trouble diagnostics prev<CR>', { noremap = true, silent = true, desc = "Jump to next error in Trouble's diagnostics list"} )
+vim.keymap.set('n', '<leader>ne', '<CMD>Ex<CR>', { desc = "Open netrw" })
+vim.keymap.set('n', '<leader>bd', '<CMD>bd<CR>', { desc = "Close buffer" })
 
 vim.keymap.set("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 vim.keymap.set("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
