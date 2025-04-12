@@ -2,7 +2,8 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 26,
+    "height": 30,
+    //"width": 1350,
     "width": 1350,
     "margin-left": 10,
     "margin-right": 10,
@@ -99,7 +100,7 @@
         // "format": "<span weight='bold' color='#a9a1e1'>[] {class}</span>",
         // "format": "<span size='10095' weight='bold' color='#a9a1e1'>[] {title}</span>",
         //"format": "<span size='10095' weight='bold' color='#a9a1e1'>[] {title}</span>",
-        "format": "<span size='10095' weight='bold'>[] {title}</span>",
+        "format": "<span size='10050' weight='bold' color='#a9a1e1'>[] {title}</span>",
         // "format": "<span color='#a9a1e1' rise='-4444'>{}</span>",
         "max-length": 120
     },

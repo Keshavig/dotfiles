@@ -6,5 +6,7 @@ return {
             enabled = false, -- Disable scope highlighting (the blue line)
         }
         return opts
+
     end,
 }
+

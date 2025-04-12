@@ -3,6 +3,7 @@ configuration {
   modes: "window,drun,run,ssh";
   font: "JetbrainsMono SemiBold 11.3";
   drun-display-format: "{icon} {name}";
+  matching: "fuzzy";
 }
 
 * {

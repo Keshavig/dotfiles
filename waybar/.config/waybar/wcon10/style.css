@@ -1,11 +1,13 @@
+@import url('file:///home/ke/.cache/wal/colors-waybar.css');
+
 * {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 #custom-icon {
-    font-size: 17px;
+    font-size: 16px;
     color: #0db9d7;
 }
 
@@ -98,14 +100,14 @@ tooltip {
 }
 
 #tray menu separator {
-    min-height: 10px;
+    min-height: 13px;
 }
 
 #network {
     color: #e0af68;
     /* color: #7dcfff; */
     font-weight: bold;
-    font-size: 13.2px;
+    font-size: 13px;
     padding-right: 0px;
     padding-left: 4px;
 }
@@ -113,7 +115,7 @@ tooltip {
 #battery {
     color:#7dcfff;
     font-weight: bold;
-    font-size: 13.2px;
+    font-size: 13px;
     padding-right: 0px;
     padding-left: 4px;
 
@@ -127,7 +129,7 @@ tooltip {
 #custom-kernel {
     color:#9ece6a;
     font-weight: bold;
-    font-size: 13.2px;
+    font-size: 13px;
     padding-right: 0px;
     padding-left: 4px;
 
@@ -149,7 +151,7 @@ tooltip {
 #clock {
     /* color: #7dcfff; */
     color: #9d7cd8;
-    font-size: 13.2px;
+    font-size: 13px;
     font-weight: bold;
     font-family: "JetBrains Mono Nerd Font";
 
@@ -160,7 +162,7 @@ tooltip {
 }
  #custom-pipewire {
     color: #ff9e64;
-    font-size: 13.2px;
+    font-size: 13px;
     font-weight: bold;
 
     transition: all 0.005s ease-in-out;
@@ -181,7 +183,7 @@ tooltip {
 
 #custom-packages {
     font-weight: bold;
-    font-size: 13.2px;
+    font-size: 13px;
     /* color: #db4b4b; */
     /* color: #7dcfff; */
     color: #abb2bf;
@@ -194,7 +196,7 @@ tooltip {
 
 #cpu {
     font-weight: bold;
-    font-size: 13.2px;
+    font-size: 13px;
     /* color: #db4b4b; */
     /* color: #7dcfff; */
     color: #f7768e;
@@ -207,7 +209,7 @@ tooltip {
 
 #memory {
     font-weight: bold;
-    font-size: 13.2px;
+    font-size: 13px;
     color: #9ece6a;
 
 

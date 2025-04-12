@@ -1,17 +1,17 @@
 return {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {
-      style = "night",
-      styles = {
-          comments  =  { italic = false },
-          functions =  { italic = false },
-          keywords  =  { italic = false },
-          variables =  { italic = false },
+    "Keshavig/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+        style = "night",
+        styles = {
+            comments = { italic = false },
+            functions = { italic = false },
+            keywords = { italic = false },
+            variables = { italic = false },
 
-          sidebars = "dark";
-          floats   = "dark";
-      },
-  },
+            sidebars = "dark",
+            floats = "dark",
+        },
+    },
 }

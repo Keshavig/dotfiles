@@ -20,9 +20,9 @@ return {
         cmdline = {
             keymap = {
                 -- recommended, as the default keymap will only show and select the next item
-                ["<Tab>"] = { "show", "accept" },
+                ['<Tab>'] = { 'show', 'accept' },
             },
-            completion = { menu = { auto_show = false } }, -- My laptop is way too slow for this :(
+            completion = { menu = { auto_show = false } },
         },
         completion = {
             ghost_text = { enabled = false },
@@ -40,5 +40,6 @@ return {
                 },
             },
         },
+
     },
 }
