@@ -1,26 +1,33 @@
--- Disabling some inbuilt plugins
-vim.g.loaded_gzip = 1
-vim.g.loaded_tar = 1
-vim.g.loaded_tarPlugin = 1
-vim.g.loaded_zip = 1
-vim.g.loaded_zipPlugin = 1
-vim.g.loaded_getscript = 1
-vim.g.loaded_getscriptPlugin = 1
-vim.g.loaded_vimball = 1
-vim.g.loaded_vimballPlugin = 1
-vim.g.loaded_2html_plugin = 1
-vim.g.loaded_logiPat = 1
-vim.g.loaded_rrhelper = 1
-vim.g.loaded_remote_plugins = 1
+-- Disabling some built in n/vim plugins
+for _, plugin in ipairs({
+    "gzip",
+    "tar",
+    "tarPlugin",
+    "zip",
+    "zipPlugin",
+    "getscript",
+    "getscriptPlugin",
+    "vimball",
+    "vimballPlugin",
+    "2html_plugin",
+    "logiPat",
+    "rrhelper",
+    "remote_plugins",
+}) do
+    vim.g["loaded_" .. plugin] = 1
+end
 
 -- Basic Qol settings
-vim.o.clipboard = "unnamedplus"
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 vim.o.ignorecase = true
 vim.opt.iskeyword:append("-")
+-- if this is false then, the numeber for current line in the statuscolumn always shows 0 
+vim.o.number = true
+
 vim.o.relativenumber = true
 vim.o.scrolloff = 8
-vim.o.splitbelow = true
-vim.o.splitright = true
 vim.opt.backspace = "indent,eol,start"
 vim.o.termguicolors = true
 vim.o.updatetime = 50
@@ -41,14 +48,30 @@ vim.o.writebackup = false
 vim.o.undofile = true
 vim.o.cursorline = true
 vim.o.swapfile = false
-vim.o.signcolumn = "yes"
-vim.o.cmdheight = 1
+vim.o.signcolumn = 'yes'
+
+-- NEOVIDE
+if vim.g.neovide then
+    vim.g.neovide_cursor_animation_length = 0
+    vim.g.neovide_scale_factor = 1.0
+    vim.g.neovide_cursor_hack = true
+    vim.g.neovide_cursor_trail_size = 0
+    vim.g.neovide_cursor_animate_command_line = false
+    -- vim.g.neovide_scroll_animation_length = 0
+    vim.keymap.set({"n", "i", "v", "t", "c"}, "<C-=>", "<CMD>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR><CMD>redraw<CR>", { silent = true })
+    vim.keymap.set({"n", "i", "v", "t", "c"}, "<C-->", "<CMD>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR><CMD>redraw<CR>", { silent = true })
+    vim.keymap.set({"n", "i", "v", "t", "c"}, "<C-+>", "<CMD>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR><CMD>redraw<CR>", { silent = true })
+    vim.keymap.set({"n", "i", "v", "t", "c"}, "<C-_>", "<CMD>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR><CMD>redraw<CR>", { silent = true })
+    vim.keymap.set({"n", "i", "v", "t", "c"}, "<C-0>", "<CMD>lua vim.g.neovide_scale_factor = 1<CR><CMD>redraw<CR>", { silent = true })
+    vim.g.neovide_padding_top = 5
+    vim.g.neovide_padding_bottom = 0
+    vim.g.neovide_padding_right = 5
+    vim.g.neovide_padding_left = 0
+end
+
+--vim.o.cmdheight = 1
 vim.o.completeopt = menuone, noinsert, noselect
-vim.o.shell = "/usr/bin/zsh"
-vim.cmd("highlight ColorColumn ctermbg=0 guibg=#282c34")
 vim.cmd("set hlsearch")
-vim.cmd("set termguicolors")
-vim.cmd("set nu")
 vim.cmd("set nofsync")
-vim.cmd("set cinoptions=sN")
+vim.cmd("set cinoptions=N-sg0")
 vim.cmd("set guicursor=")

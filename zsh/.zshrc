@@ -1,10 +1,8 @@
 # EXPORTS
 
-export PATH="$HOME/.config/emacs/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH" export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
-export PATH=$HOME/.config/rofi/scripts:$PATH
-export PATH=$HOME/.config/rofi/applets/bin:$PATH
-export PATH=$HOME/.local/include/imgui:$HOME/.local/include/imgui/backends/:$PATH
-
+export PATH="$HOME/.config/emacs/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.local/share/nvim/mason/bin/:$HOME/.config/emacs/bin$PATH"
+#
+#
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -86,6 +84,8 @@ alias ls="ls --color=always"
 alias make='make -j4'
 alias cman="cppman"
 alias sudo='doas'
+alias remacs='killall emacs; /usr/local/bin/emacs --daemon &'
+alias emacs="emacsclient -c -a 'emacs' "
 
 # Shell integrations
 eval "$(fzf --zsh)"

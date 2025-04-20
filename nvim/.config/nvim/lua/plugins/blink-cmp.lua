@@ -1,12 +1,12 @@
 return {
     "saghen/blink.cmp",
+    enabled = true,
     event = "InsertEnter",
     -- dependencies = "rafamadriz/friendly-snippets",
     version = "*",
     opts = {
-        keymap = {
-            preset = "super-tab",
-        },
+        signature = { enabled = true },
+        keymap = { preset = "super-tab" },
         sources = {
             default = { "lazydev", "lsp", "path", "snippets", "buffer", "cmdline", "omni" },
             providers = {
@@ -18,10 +18,7 @@ return {
             },
         },
         cmdline = {
-            keymap = {
-                -- recommended, as the default keymap will only show and select the next item
-                ["<Tab>"] = { "show", "accept" },
-            },
+            keymap = { ["<Tab>"] = { "show", "accept" } },
             completion = { menu = { auto_show = false } }, -- My laptop is way too slow for this :(
         },
         completion = {

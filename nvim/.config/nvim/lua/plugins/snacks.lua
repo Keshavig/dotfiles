@@ -1,6 +1,8 @@
 return {
     "folke/snacks.nvim",
-    priory = 100000,
+    enabled = true,
+    priory = 1000,
+    lazy = false,
     opts = {
         statuscolumn = { enabled = false },
         scroll       = { enabled = false }, -- Gives me headache especially when using gg/G in large files

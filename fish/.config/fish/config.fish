@@ -58,8 +58,10 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 alias df='df -h'               # human-readable sizes
 alias free='free -m'           # show sizes in MB
 alias grep='grep --color=auto' # colorize output (good for log files)
-alias vim='nvim'
 alias sudo='doas'
+alias mv='mv -v'
+alias cp='cp -v'
+alias rm='rm -v'
 
 # colorscript random
 # fastfetch

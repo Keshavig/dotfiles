@@ -1,5 +1,6 @@
 return {
     "neovim/nvim-lspconfig",
+    enabled = true,
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -22,7 +23,8 @@ return {
 
         vim.diagnostic.config({
             update_in_insert = true,
-            -- virtual_text = { spacing = 4, prefix = "●"},
+            --virtual_text = { spacing = 4, prefix = "●"},
+            -- virtual_lines = { spacing = 4 },
             virtual_text = { spacing = 4 },
             float = { border = "rounded" },
             signs = true,
@@ -31,7 +33,8 @@ return {
         })
 
         local capabilities = blink_cmp.get_lsp_capabilities() -- Blink.cmp capabilities
-        local on_attach = function(_, _) end -- Keybindings handled externally
+        local on_attach = function(_, _)
+        end -- Keybindings handled externally
 
         -- Define common server configurations
         local default_config = {
