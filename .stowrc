@@ -1,4 +1,4 @@
 --verbose=2
 --target=~
 --dir=~/github/dotfiles/
---ignore nvim-old
+--ignore nvim-old nvim-simple ./Programming ./projects/ ./Projects

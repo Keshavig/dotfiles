@@ -1,0 +1,4 @@
+struct ast {
+    left_node: &ast,
+    operator: 
+}
