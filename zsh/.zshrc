@@ -1,9 +1,6 @@
 # EXPORTS
 
-export PATH="$HOME/.config/emacs/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.local/share/nvim/mason/bin/:$HOME/.config/emacs/bin$PATH"
-#
-#
-# Set the directory we want to store zinit and plugins
+export PATH="$HOME/.config/emacs/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.local/share/nvim/mason/bin/:$HOME/.config/emacs/bin:$HOME/.spicetify:$PATH"
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Download Zinit, if it's not there yet
@@ -78,16 +75,24 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+goto() {
+    cd $(fzf)
+}
+
 # Aliases
 # alias ls="exa --color=always"
-alias ls="ls --color=always"
+alias ls="ls --color=always -A"
 alias make='make -j4'
 alias cman="cppman"
 alias sudo='doas'
 alias remacs='killall emacs; /usr/local/bin/emacs --daemon &'
 alias emacs="emacsclient -c -a 'emacs' "
+alias vim="nvim"
+alias startp="/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland"
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 # colorscript -r
+
+export PATH=$PATH:/home/ke/.spicetify
