@@ -44,5 +44,5 @@ theme = tokyonight_night
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
-cursor-color = "#e0af68"
-font-family = JetBrainsMono Nerd Font
+cursor-color = "#e0af68" 
+font-family = JetBrains Mono

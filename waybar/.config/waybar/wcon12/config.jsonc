@@ -41,7 +41,6 @@
         "custom/pipewire",
         "custom/space",
         "custom/space",
-        "custom/volProp",
 
         "clock",
         "custom/clockProp",
@@ -168,10 +167,10 @@
     },
 
 
-    "custom/kernel": {
-        "format": "linux: {}",
-        "exec": "uname -r"
-    },
+    // "custom/kernel": {
+    //     "format": "linux: {}",
+    //     "exec": "uname -r"
+    // },
 
     // "battery": {
     //     "states": {
@@ -194,6 +193,7 @@
     "custom/pipewire": {
         // "format": "Vol: {}% | ",
         "format": "  {}%",
-        "exec": "pamixer --get-volume"
+        "exec": "pamixer --get-volume",
+        "on-click-left": "pavucontrol"
     }
 }

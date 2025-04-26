@@ -29,8 +29,7 @@ return {
             violet = "#9d7cd8",
             magenta = "#bb9af7",
             blue = "#7aa2f7",
-            red = "#f7768e",
-        }
+            red = "#f7768e", }
 
         local conditions = {
             buffer_not_empty = function()

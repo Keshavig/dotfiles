@@ -4,9 +4,9 @@ hinting = "full"
 edging = "antialias"
 
 [[font.normal]]
-family = "JetBrainsMono Nerd Font"
+family = "Iosevka Nerd Font"
 style = "Normal"
 
 [[font.bold]]
-family = "JetBrainsMono Nerd Font"
+family = "Iosevka Nerd Font"
 style = "Normal"

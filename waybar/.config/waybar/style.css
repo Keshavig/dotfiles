@@ -1,5 +1,3 @@
-@import url('file:///home/ke/.cache/wal/colors-waybar.css');
-
 * {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
@@ -7,21 +5,25 @@
 }
 
 #custom-icon {
-    font-size: 16px;
+    font-size: 15px;
     color: #0db9d7;
 }
 
-window#waybar {
+#window {
+    color: #a9a1e1;
+}
+
+#waybar {
     /* background: #0F0F17; */
     /* background: #1f2329; */
-    background: #16161e;
+    background: #282c34;
     /* border: 2px solid #1AFFFFFF;  */
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px; /* Remove rounded corners */
 }
 
 tooltip {
-    background: #171717;
+    background: #282c34;
     color: #7dcfff;
     border-radius: 0px; /* Remove rounded corners */
     border: 2px solid #101a24;
@@ -100,7 +102,7 @@ tooltip {
 }
 
 #tray menu separator {
-    min-height: 13px;
+    min-height: 10px;
 }
 
 #network {
@@ -178,7 +180,7 @@ tooltip {
 
 #custom-poweroffLogo {
     color: #bbc2cf;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 #custom-packages {

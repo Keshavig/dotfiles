@@ -69,7 +69,7 @@ if vim.g.neovide then
     vim.g.neovide_padding_left = 0
 end
 
---vim.o.cmdheight = 1
+vim.o.cmdheight = 1
 vim.o.completeopt = menuone, noinsert, noselect
 vim.cmd("set hlsearch")
 vim.cmd("set nofsync")

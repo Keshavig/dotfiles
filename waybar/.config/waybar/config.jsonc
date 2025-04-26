@@ -2,8 +2,7 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 30,
-    //"width": 1350,
+    "height": 26,
     "width": 1350,
     "margin-left": 10,
     "margin-right": 10,
@@ -42,7 +41,6 @@
         "custom/pipewire",
         "custom/space",
         "custom/space",
-        "custom/volProp",
 
         "clock",
         "custom/clockProp",
@@ -100,7 +98,7 @@
         // "format": "<span weight='bold' color='#a9a1e1'>[] {class}</span>",
         // "format": "<span size='10095' weight='bold' color='#a9a1e1'>[] {title}</span>",
         //"format": "<span size='10095' weight='bold' color='#a9a1e1'>[] {title}</span>",
-        "format": "<span size='10050' weight='bold' color='#a9a1e1'>[] {title}</span>",
+        "format": "<span size='10095' weight='bold'>[] {title}</span>",
         // "format": "<span color='#a9a1e1' rise='-4444'>{}</span>",
         "max-length": 120
     },
@@ -169,10 +167,10 @@
     },
 
 
-    "custom/kernel": {
-        "format": "linux: {}",
-        "exec": "uname -r"
-    },
+    // "custom/kernel": {
+    //     "format": "linux: {}",
+    //     "exec": "uname -r"
+    // },
 
     // "battery": {
     //     "states": {
@@ -195,6 +193,7 @@
     "custom/pipewire": {
         // "format": "Vol: {}% | ",
         "format": "  {}%",
-        "exec": "pamixer --get-volume"
+        "exec": "pamixer --get-volume",
+        "on-click-left": "pavucontrol"
     }
 }
