@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# require hyprsunset 
+cache_file="$HOME/.cache/nightlightctl_value"
+min_value=1000
+max_value=20000
+def_incrdecr_value=100
+
+if ! [ -f "$cache_file" ]; then
+    echo "Could not find $0's defualt cache file, so making one $cache_file"
+    echo "3000" > "$cache_file"
+fi
+
+current_value=$(cat "$cache_file")
+if [ $# = 2 ]; then
+    def_incrdecr_value=$2
+fi
+
+if [ "$1" = "increase" ] || [ "$1" = "incr" ] || [ "$1" = "i" ]; then
+    new_value=$((current_value + def_incrdecr_value))
+elif [ "$1" = "decrease" ] || [ "$1" = "decr" ] || [ "$1" = "d" ]; then
+    new_value=$((current_value - def_incrdecr_value))
+else
+    new_value=3000
+fi
+
+echo "$new_value" > "$cache_file"
+mesg="Before: $current_value -> After: $new_value [min, max: $min_value, $max_value]"
+
+if [ "$new_value" -gt $max_value ]; then
+    mesg="Night Light: cannot go any higher, max value reached: $max_value"
+    exit 1
+elif [ "$new_value" -lt $min_value ]; then
+    mesg="Night Light: cannot go any lower, min value reached: $min_value"
+    exit 1
+elif [ "$new_value" = 6500 ]; then
+    mesg="Night Light: Normal value: 6500"
+elif [ "$new_value" = 3000 ]; then
+    mesg="Night Light: Default value: 3000"
+fi
+
+
+killall hyprsunset &2 > /dev/null
+echo "$mesg" && notify-send "$mesg"
+hyprsunset -t "$new_value" &

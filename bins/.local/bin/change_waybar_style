@@ -1,50 +1,52 @@
 #!/bin/bash
 
+echo "DONE WITH THIS"
+exit 1
 
-NUM_OF_STYLES=16
-FILE="$HOME/.cache/currentWaybarTheme"
-DIR="$HOME/.config/waybar"
-NAME="wcon"
-
-# Create Styles array (not really needed but keeping it)
-Styles=($(seq 1 "$NUM_OF_STYLES"))
-
-# Ensure the file exists and read current theme
-if [[ ! -f "$FILE" ]]; then
-    echo "1" > "$FILE"
-fi
-
-CURRENT_THEME=$(cat "$FILE")
-
-# If CURRENT_THEME is invalid, reset it to 1
-if [[ ! "$CURRENT_THEME" =~ ^[0-9]+$ ]] || [[ $CURRENT_THEME -lt 1 ]] || [[ $CURRENT_THEME -gt $NUM_OF_STYLES ]]; then
-    CURRENT_THEME=1
-    echo "$CURRENT_THEME" > "$FILE"
-fi
-
-if [[ "$1" == "-r" ]]; then
-
-    killall waybar
-
-    rm -rf "$DIR/config.jsonc" "$DIR/style.css"
-    cp -rf "$DIR/$NAME$CURRENT_THEME"/* "$DIR/"
-
-    waybar > /dev/null 2>&1 &
-    notify-send "Changed waybar style to wcon$CURRENT_THEME"
-
-    exit 0
-fi
-
-# Get the next theme in a circular way (1 to NUM_OF_STYLES)
-NEXT_THEME=$(( (CURRENT_THEME % NUM_OF_STYLES) + 1 ))
-
-# Save new theme
-echo "$NEXT_THEME" > "$FILE"
-
-killall waybar
-
-rm -rf "$DIR/config.jsonc" "$DIR/style.css"
-cp -rf "$DIR/$NAME$NEXT_THEME"/* "$DIR/"
-
-waybar > /dev/null 2>&1 &
-notify-send "Changed waybar style to wcon$NEXT_THEME"
+# NUM_OF_STYLES=16
+# FILE="$HOME/.cache/currentWaybarTheme"
+# DIR="$HOME/.config/waybar"
+# NAME="wcon"
+#
+# # Create Styles array (not really needed but keeping it)
+# Styles=($(seq 1 "$NUM_OF_STYLES"))
+#
+# # Ensure the file exists and read current theme
+# if [[ ! -f "$FILE" ]]; then
+#     echo "1" > "$FILE"
+# fi
+#
+# CURRENT_THEME=$(cat "$FILE")
+#
+# # If CURRENT_THEME is invalid, reset it to 1
+# if [[ ! "$CURRENT_THEME" =~ ^[0-9]+$ ]] || [[ $CURRENT_THEME -lt 1 ]] || [[ $CURRENT_THEME -gt $NUM_OF_STYLES ]]; then
+#     CURRENT_THEME=1
+#     echo "$CURRENT_THEME" > "$FILE"
+# fi
+#
+# if [[ "$1" == "-r" ]]; then
+#
+#     killall waybar
+#
+#     rm -rf "$DIR/config.jsonc" "$DIR/style.css"
+#     cp -rf "$DIR/$NAME$CURRENT_THEME"/* "$DIR/"
+#
+#     waybar > /dev/null 2>&1 &
+#     notify-send "Changed waybar style to wcon$CURRENT_THEME"
+#
+#     exit 0
+# fi
+#
+# # Get the next theme in a circular way (1 to NUM_OF_STYLES)
+# NEXT_THEME=$(( (CURRENT_THEME % NUM_OF_STYLES) + 1 ))
+#
+# # Save new theme
+# echo "$NEXT_THEME" > "$FILE"
+#
+# killall waybar
+#
+# rm -rf "$DIR/config.jsonc" "$DIR/style.css"
+# cp -rf "$DIR/$NAME$NEXT_THEME"/* "$DIR/"
+#
+# waybar > /dev/null 2>&1 &
+# notify-send "Changed waybar style to wcon$NEXT_THEME"

@@ -13,7 +13,7 @@ yellow = "#ecbe7b"
 
 [colors.cursor]
 # cursor = "#528bff"
-cursor = "#2257A0"
+cursor = "#dfdfdf"
 text = "CellBackground"
 
 [colors.normal]
@@ -43,19 +43,19 @@ TERM = "xterm-256color"
 size = 12.0
 
 [font.bold]
-family = "Iosevka Nerd Font"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Iosevka Nerd Font"
+family = "JetBrains Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Iosevka Nerd Font"
+family = "JetBrains Mono"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka Nerd Font"
+family = "JetBrains Mono"
 style = "Regular"
 
 [font.offset]

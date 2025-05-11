@@ -1,0 +1,10 @@
+#!/bin/sh
+
+value=$(pamixer --get-mute)
+
+if [ "$value" = "false" ]; then
+    pamixer --mute
+else
+    pamixer --unmute
+fi
+

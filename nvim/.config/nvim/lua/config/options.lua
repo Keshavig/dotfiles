@@ -46,7 +46,7 @@ vim.o.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.undofile = true
-vim.o.cursorline = true
+vim.o.cursorline = false
 vim.o.swapfile = false
 vim.o.signcolumn = 'yes'
 
@@ -73,5 +73,6 @@ vim.o.cmdheight = 1
 vim.o.completeopt = menuone, noinsert, noselect
 vim.cmd("set hlsearch")
 vim.cmd("set nofsync")
-vim.cmd("set cinoptions=N-sg0")
+vim.cmd("set cinoptions=g0")
+vim.cmd("set termguicolors")
 vim.cmd("set guicursor=")

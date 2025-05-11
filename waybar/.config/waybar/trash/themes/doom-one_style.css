@@ -1,0 +1,227 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#custom-icon {
+    font-size: 15px;
+    color: #51afef;
+}
+
+window#waybar {
+    /* background: #0F0F17; */
+    /* background: #1f2329; */
+    background: #282c34;
+    /* border: 2px solid #1AFFFFFF;  */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px; /* Remove rounded corners */
+}
+
+tooltip {
+    background: #171717;
+    color: #46d9ff;
+    font-size: 13px;
+    border-radius: 0px; /* Remove rounded corners */
+    border: 2px solid #101a24;
+}
+
+
+#hyprland-window {
+    color: #ff6c6b;
+}
+
+/* #custom-comma { */
+/*     color: #A; */
+/* } */
+/**/
+#workspaces {
+    background: rgba(23, 23, 23, 0.0);
+    color: #888789;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 0px; /* Remove rounded corners */
+    transition: 0.005s ease-in-out; /* ANIMATION */
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    /* width: 100%;  */
+}
+
+#workspaces button {
+    background: rgba(23, 23, 23, 0.0);
+    color: #46d9ff;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 0px; /* Remove rounded corners */
+    transition: 0.2s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#workspaces button.active {
+    color: #7aa2f7;
+    transition: all 0.005s ease-in-out;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #7aa2f7; /* Keep only the underline */
+}
+
+#workspaces button.empty {
+    /* color: #e0af68; */
+    color: #9ece6a;
+    transition: all 0.3s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    transition: all 0.005s ease-in-out;
+    border: none;
+    border-bottom: 2px solid #dfdfdf;
+}
+
+/* Is equal to inactive workspaces */
+#workspaces button {
+    /* color: #3d59a1;*/
+    transition: all 0.3s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#workspaces button:hover {
+    background: none;
+    color: #f7768e;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#tray menu separator {
+    min-height: 10px;
+}
+
+#network {
+    color: #e0af68;
+    /* color: #46d9ff; */
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 0px;
+    padding-left: 4px;
+}
+
+#battery {
+    color:#46d9ff;
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 0px;
+    padding-left: 4px;
+
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #46d9ff; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#custom-kernel {
+    color:#98be65;
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 0px;
+    padding-left: 4px;
+
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #98be65; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#custom-batProp {
+    color: #1abc9c;
+}
+
+#custom-clockProp {
+    color: #bb9af7;
+}
+
+#clock {
+    /* color: #46d9ff; */
+    color: #bb9af7;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "JetBrains Mono Nerd Font";
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #bb9af7; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+ #custom-pipewire {
+    color: #ff9e64;
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: all 0.005s ease-in-out;
+    border: none;
+    border-bottom: 2px solid #ff9e64;
+    border-bottom-width: 2px;
+}
+
+#custom-volProp {
+    color: #e0af68;
+}
+
+
+#custom-poweroffLogo {
+    color: #bbc2cf;
+    font-size: 15px;
+}
+
+#custom-pacmanUp {
+    font-weight: bold;
+    font-size: 13px;
+    /* color: #db4b4b; */
+    /* color: #46d9ff; */
+    color: #abb2bf;
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #abb2bf; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#cpu {
+    font-weight: bold;
+    font-size: 13px;
+    /* color: #db4b4b; */
+    /* color: #46d9ff; */
+    color: #ff6c6b;
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #ff6c6b; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#memory {
+    font-weight: bold;
+    font-size: 13px;
+    color: #98be65;
+
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #98be65; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#taskbar {
+    padding: 1px;
+    /* width: 100%; */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}

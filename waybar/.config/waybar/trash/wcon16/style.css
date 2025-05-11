@@ -1,0 +1,188 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#custom-icon {
+    font-size: 16px;
+    color: #fe8019;
+}
+
+#window {
+    color: #d3869b;
+}
+
+#waybar {
+    /* background: #0F0F17; */
+    /* background: #1f2329; */
+    background: #32302f;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px; /* Remove rounded corners */
+}
+
+tooltip {
+    background: #1d2021;
+    color: #b16286;
+    border-radius: 0px; /* Remove rounded corners */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+
+#hyprland-window {
+    color: #fb9434;
+}
+
+#workspaces {
+    background: rgba(23, 23, 23, 0.0);
+    color: #83a598;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 0px; /* Remove rounded corners */
+    transition: 0.005s ease-in-out; /* ANIMATION */
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+}
+
+#workspaces button {
+    background: rgba(23, 23, 23, 0.0);
+    /* color: #bbc2cf; */
+    color: #458588;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 0px; /* Remove rounded corners */
+    transition: 0.005s ease-in-out;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#workspaces button.active {
+    color: #83a598;
+    transition: all 0.005s ease-in-out;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    border-bottom: 2px solid #83a598; /* Keep only the underline */
+    border: none; /* Remove all borders */
+}
+
+#workspaces button.empty {
+    /* color: #e0af68; */
+    /* color: #9ece6a; */
+    color: #d5c4a1;
+    transition: all 0.3s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    transition: all 0.005s ease-in-out;
+    border: none;
+    border-bottom: 2px solid #d5c4a1;
+}
+
+/* Is equal to inactive workspaces */
+#workspaces button {
+    /* color: #3d59a1;*/
+    transition: all 0.3s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#workspaces button:hover {
+    background: none;
+    color: #bdae93;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#tray menu separator {
+    min-height: 10px;
+}
+
+#battery {
+    color:#458588;
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 0px;
+    padding-left: 4px;
+
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #458588; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#clock {
+    /* color: #7dcfff; */
+    color: #b16286;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "JetBrains Mono Nerd Font";
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #b16286; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+ #custom-pipewire {
+    color: #bdae93;
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: all 0.005s ease-in-out;
+    border: none;
+    border-bottom: 2px solid #bdae93;
+    border-bottom-width: 2px;
+}
+
+#custom-poweroffLogo {
+    color: #ebdbb2;
+    font-size: 15px;
+}
+
+#custom-packages {
+    font-weight: bold;
+    font-size: 13px;
+    color: #fb9434;
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #fb9434; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#cpu {
+    font-weight: bold;
+    font-size: 13px;
+    /* color: #db4b4b; */
+    /* color: #7dcfff; */
+    color: #fc9690;
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #fc9690; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#memory {
+    font-weight: bold;
+    font-size: 13px;
+    color: #8ec07c;
+
+
+    transition: all 0.005s ease-in-out;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #8ec07c; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#taskbar {
+    padding: 1px;
+    /* width: 100%; */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}

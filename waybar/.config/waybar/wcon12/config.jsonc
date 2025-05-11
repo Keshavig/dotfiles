@@ -27,9 +27,9 @@
         "custom/space",
         "custom/space",
 
-        "custom/packages",
-        "custom/space",
-        "custom/space",
+        // "custom/packages",
+        // "custom/space",
+        // "custom/space",
 
         "battery",
         "custom/space",
@@ -194,6 +194,7 @@
         // "format": "Vol: {}% | ",
         "format": "  {}%",
         "exec": "pamixer --get-volume",
-        "on-click-left": "pavucontrol"
+        "on-click-left": "pavucontrol",
+        "interval": 5
     }
 }

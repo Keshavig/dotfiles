@@ -1,0 +1,37 @@
+#!/bin/sh
+
+current_bvalue=$(brightnessctl  get)
+max_value=$(brightnessctl max)
+default_increase_decrease_value=10
+
+if [ $# -lt 1 ] || [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+    echo "USAGE: $0 [ [increase|incr|i] | [decrease|decr|d] ] [value]"
+    echo "Here value is expected to be positive"
+    exit 1
+fi
+
+if [ $# = 2 ] || [ $#  -gt 2 ]; then
+    default_increase_decrease_value=$2
+fi
+
+if [ "$1" = "increase" ] || [ "$1" = "incr" ] || [ "$1" = "i" ]; then
+    new_value=$((current_bvalue + default_increase_decrease_value))
+    if [ $new_value -gt "$max_value" ]; then
+        notify-send "Brightness: Cannot go any higher, max value $max_value"
+        return 1
+    fi
+
+elif [ "$1" = "decrease" ] || [ "$1" = "decr" ] || [ "$1" = "d" ]; then
+    new_value=$((current_bvalue - default_increase_decrease_value));
+    if [ $new_value -lt 0 ]; then
+        notify-send "Brightness: Cannot go any lower, least value 0"
+        return 1
+    fi
+fi
+
+echo "$current_bvalue -> $new_value"
+brightnessctl set "$new_value"
+
+if [ $# -gt 2 ] && [ "$3" = "noti=yes" ]; then
+    notify-send "Before: $current_bvalue -> Now: $new_value [Max: $max_value]"
+fi

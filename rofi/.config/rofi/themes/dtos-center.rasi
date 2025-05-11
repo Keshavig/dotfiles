@@ -6,20 +6,19 @@
  */
 
 * {
-    background-color:            #16161e;
-    // border-color:                #51afef;
-    border-color:                #282c34;
-    border-radius:               8px;
-    text-color:                  #bbc2cf;
-    font:                        "JetBrainsMono NF Bold 10";
-    prompt-font:                 "JetBrainsMono NF 10";
-    prompt-background:           #51afef;
-    prompt-foreground:           #16161e;
+    background-color:            #002b36;
+    border-color:                #2aa198;
+    border-radius:               0px;
+    text-color:                  #657b83;
+    font:                        "JetBrainsMono NF Bold 11.2";
+    prompt-font:                 "JetBrainsMono NF 11";
+    prompt-background:           #268bd2;
+    prompt-foreground:           #002831;
     prompt-padding:              4px;
-    alternate-normal-background: #1c1f24;
+    alternate-normal-background: #002831;
     alternate-normal-foreground: @text-color;
-    selected-normal-background:  #ae3f3e;
-    selected-normal-foreground:  #ffffff;
+    selected-normal-background:  #dc322f;
+    selected-normal-foreground:  #fdf6e3;
     spacing:                     3;
 }
 #window {
@@ -93,7 +92,7 @@ element-text {
 }
 
 element-icon {
-    background-color: inherit;
+    size: 2.5ch;
 }
 
 /* Not actually relevant for this configuration, but it might

@@ -2,12 +2,12 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 26,
+    "height": 27,
     "width": 1350,
     "margin-left": 10,
     "margin-right": 10,
     "margin-top": 3,
-    "margin-bottom": 7,
+    "margin-bottom": 0,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
@@ -15,6 +15,7 @@
     "modules-left": [
         "custom/icon",
         "hyprland/workspaces",
+        "custom/opening_and_closing_brackets",
         "hyprland/window"
     ],
 
@@ -27,24 +28,16 @@
         "custom/space",
         "custom/space",
 
-        "custom/packages",
-        "custom/space",
-        "custom/space",
-
         "battery",
         "custom/space",
         "custom/space",
 
 
-        // "network",
-        // "custom/storage",
         "custom/pipewire",
         "custom/space",
         "custom/space",
 
         "clock",
-        "custom/clockProp",
-        "custom/poweroffLogo"
     ],
 
     "custom/space": {
@@ -56,9 +49,9 @@
     },
 
     "custom/icon": {
-        "format": "  ",
-        // "on-click": "rofi -show drun"
-        "on-click": "~/.local/bin/change_waybar_style"
+        "format": " ⚙️ ",
+        "on-click": "rofi -show drun -sort -show-icons"
+        // "on-click": "~/.local/bin/change_waybar_style"
     },
 
     "custom/poweroffLogo": {
@@ -83,44 +76,46 @@
     },
 
     "cpu": {
-        // "format": "Cpu: {usage}% | ",
-        "format": "▓ {usage}%",
-        "on-click": "kitty --hold sh -c 'htop'"
-    },
-    "memory": {
-        // "format": "Mem: {}% | ",
-        "format": "🖥 {}%",
+        // "format": "cpu: {usage}%",
+        "format": "🗄️ {usage}%",
         "on-click": "kitty --hold sh -c 'htop'"
     },
 
+    "memory": {
+        // "format": "mem: {}%",
+        "format": "🖥️ {}%",
+        "on-click": "kitty --hold sh -c 'htop'"
+    },
+
+    "custom/opening_and_closing_brackets": {
+        "format": "<span color='#9ccfd8' weight='bold'> [] </span>"
+    },
+
     "hyprland/window": {
-        // "format": "<span weight='bold' color='#ff9e64'>[] {class}</span>",
-        // "format": "<span weight='bold' color='#a9a1e1'>[] {class}</span>",
-        // "format": "<span size='10095' weight='bold' color='#a9a1e1'>[] {title}</span>",
-        //"format": "<span size='10095' weight='bold' color='#a9a1e1'>[] {title}</span>",
-        "format": "<span size='10095' weight='bold'>[] {title}</span>",
-        // "format": "<span color='#a9a1e1' rise='-4444'>{}</span>",
+        "format": "|{class}|",
         "max-length": 120
     },
 
     "hyprland/workspaces": {
-        "format": "<span weight='bold' size='11300'>{icon}</span>",
+        "format": "{icon}",
         "format-icons": {
-            "1": "|>",
-            "2": " ",
-            "3": " ",
-            "4": " ",
-            "5": " "
-            // "6": "->",
-            // "7": "<-",
-            // "8": "|",
-            // "9": "0:"
+            // "1": "🏠",
+            "1": "🐧",
+            "2": "👨🏻‍💻",
+            "3": "🌍",
+            "4": "🛠️",
+            "5": "🎧",
+            "6": "🐠",
+            "7": "🐱",
+            "8": "🐦‍🔥",
+            "9": "👁️‍🗨️",
         },
-        "sort-by-number": true
+        
+       "sort-by-number": true
     },
     "clock": {
-        // wize = 12000 = 12px
-        "format": "<span weight='bold' size='11900'> </span> {:%I:%M}",
+        "format": "<span weight='bold' size='11900'>⌚</span> {:%I:%M} ",
+        // "format": "time: {:%I:%M}",
         "rotate": 0,
         "on-click": "kitty --hold sh -c 'date'",
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -136,23 +131,6 @@
             }
         }
     },
-    "network": {
-        "tooltip": true,
-        "format-wifi": "net: {signalStrength}% | ",
-        "format-icons": [
-            "󰤟 ",
-            "󰤢 ",
-            "󰤥 "
-        ],
-        "rotate": 0,
-        "format-ethernet": "󰈀 ",
-        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-        "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": " ",
-        "tooltip-format-disconnected": "Disconnected",
-        "on-click": "/usr/local/bin/ags -t ControlPanel",
-        "interval": 2
-    },
 
     "battery": {
         "bat": "BAT0", // Replace with your battery name: get it with: ls /sys/class/power_supply/ here you should get BAT(SOMENUMBER)
@@ -161,39 +139,19 @@
             "warning": 30,
             "critical": 15
         },
-        // "format": "Bat: {capacity}% | ",
-        "format": "<span weight='bold' size='11900'> </span> {capacity}%",
+        "format": "<span weight='bold' size='14000'>🔋</span> {capacity}%",
+        // "format-charging": "<span weight='bold' size='14000'>🔋</span> {capacity}%",
+        // "format-plugged": "<span weight='bold' size='14000'>🔋</span> {capacity}%",
         "max-length": 25
+        // "format-charging": "<span weight='bold' size='14000'> </span> {capacity}%",
+        // "format-plugged": "<span weight='bold' color='#1abc9c' size='14000'> </span> <span color='#ea9a97'>{capacity}%</span>",
     },
 
-
-    // "custom/kernel": {
-    //     "format": "linux: {}",
-    //     "exec": "uname -r"
-    // },
-
-    // "battery": {
-    //     "states": {
-    //         "good": 95,
-    //         "warning": 30,
-    //         "critical": 20
-    //     },
-    //     "format": "Bat: {capacity}%",
-    //     "rotate": 0,
-    //     // "format-charging": "<span color='#a6d189'>Bat: 󱐋 {capacity}%</span>",
-    //     // "format-plugged": "<span color='#ff6c6f'> Bat: {capacity}% 󰂄</span>",
-    //
-    //
-    //     "format-charging": "<span color='#1abc9c'>Bat: {capacity}% +</span>",
-    //     "format-plugged": "<span color='#1abc9c'> Bat: {capacity}% -</span>",
-    //
-    //     "on-click-right": "pkill waybar & hyprctl dispatch exec waybar"
-    //
-    // },
     "custom/pipewire": {
-        // "format": "Vol: {}% | ",
-        "format": "  {}%",
+        "format": "📢 {}%",
+        // "format": "volume: {}%",
         "exec": "pamixer --get-volume",
-        "on-click-left": "pavucontrol"
+        "on-click-left": "pavucontrol",
+        "interval": 5
     }
 }

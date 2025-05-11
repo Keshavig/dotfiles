@@ -1,0 +1,151 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#custom-icon {
+    font-size: 14px;
+    color: #51afef;
+}
+
+window#waybar {
+    /* background: #0F0F17; */
+    background: #16161e;
+    /* border: 2px solid rgba(255, 255, 255, 0.1); */
+    border-radius: 0px; /* Remove rounded corners */
+}
+
+tooltip {
+    background: #171717;
+    color: #A1BDCE;
+    font-size: 12px;
+    border-radius: 0px; /* Remove rounded corners */
+    border: 2px solid #101a24;
+}
+
+
+#hyprland-window {
+    color: #ff6c6b;
+}
+
+#workspaces {
+    background: rgba(23, 23, 23, 0.0);
+    color: #888789;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 0px; /* Remove rounded corners */
+    transition: 0.2s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    /* width: 100%;  */
+}
+
+#workspaces button {
+    background: rgba(23, 23, 23, 0.0);
+    color: #A1BDCE;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 0px; /* Remove rounded corners */
+    transition: 0.2s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#workspaces button.active {
+    color: #7aa2f7;
+    transition: all 0.3s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+
+#workspaces button.empty {
+    /* color: #e0af68; */
+    color: #9ece6a;
+    transition: all 0.3s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* Is equal to inactive workspaces */
+#workspaces button {
+    /* color: #3d59a1;*/
+    transition: all 0.3s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#workspaces button:hover {
+    background: none;
+    color: #f7768e;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#tray menu separator {
+    min-height: 10px;
+}
+
+#network {
+    color: #e0af68;
+    /* color: #A1BDCE; */
+    font-weight: bold;
+    font-size: 12px;
+    padding-right: 0px;
+    padding-left: 4px;
+}
+
+#battery {
+    color:#1abc9c;
+    font-weight: bold;
+    font-size: 12px;
+    padding-right: 0px;
+    padding-left: 4px;
+}
+
+
+#clock {
+    /* color: #A1BDCE; */
+    color: #bb9af7;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "JetBrains Mono Nerd Font";
+}
+
+#custom-pipewire {
+    color: #e0af68;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#cpu {
+    font-weight: bold;
+    font-size: 12px;
+    /* color: #db4b4b; */
+    /* color: #A1BDCE; */
+    color: #f7768e;
+}
+
+#memory {
+    font-weight: bold;
+    font-size: 12px;
+    color: #9ece6a;
+}
+
+#battery.critical:not(.charging) {
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#taskbar {
+    padding: 1px;
+    /* width: 100%; */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}

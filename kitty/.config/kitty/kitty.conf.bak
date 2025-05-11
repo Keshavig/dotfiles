@@ -1,4 +1,7 @@
-include ~/.config/kitty/themes/tokyonight_night.conf
+# include ~/.config/kitty/themes/rose-pine-moon.conf
+include ~/.config/kitty/themes/solarized_dark_og.conf
+# include ~/.config/kitty/themes/catppuccin-mocha.conf
+# include ~/.cache/hellwal/kitty.conf
 
 # BASICS_START
 cursor_shape block
@@ -14,15 +17,17 @@ shell_integration disabled
 allow_cloning false
 
 notify_on_cmd_finish never
-clear_all_shortcuts yes
+# clear_all_shortcuts yes
 # BASICS_END
 
 # BEGIN_KITTY_FONTS
-font_family      family="JetBrainsMono Nerd Font"
+font_family      family="Cascadia Code"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
 # END_KITTY_FONTS
+
+font_size 11.0
 
 # ZOOM_IN AND OUT
 map ctrl+plus change_font_size all +2.0
@@ -90,3 +95,18 @@ tab_bar_min_tabs 2
 
 map ctrl+shift+[ launch --location=split
 map ctrl+shift+i close_window
+
+map ctrl+u scroll_up_page
+map ctrl+d scroll_down_page
+env TERM tmux-256color
+
+# FOR TMUX
+map alt+1 send_text all \x1b1
+map alt+2 send_text all \x1b2
+map alt+3 send_text all \x1b3
+map alt+4 send_text all \x1b4
+map alt+5 send_text all \x1b5
+map alt+6 send_text all \x1b6
+map alt+7 send_text all \x1b7
+map alt+8 send_text all \x1b8
+map alt+9 send_text all \x1b9
