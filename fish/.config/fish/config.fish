@@ -41,21 +41,17 @@ alias ls='ls --color=always'
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 # adding flags
-alias df='df -h'               # human-readable sizes
-alias free='free -m'           # show sizes in MB
-alias grep='rg --color=always' # colorize output (good for log files)
+alias df='df -h'
+alias grep='rg --color=always'
 alias update='doas pacman -Syyu --noconfirm'
 alias mv='mv -v'
 alias cp='cp -v'
 alias rm='rm -v'
 alias ff='fastfetch'
-alias lsf='~/projects/lsf/lsf'
-alias vdir='vdir --color=always'
+alias clear='clear -x'
+alias cfetch='countryfetch'
 
 # colorscript random
 # fastfetch
@@ -64,4 +60,4 @@ fish_config theme choose "Catppuccin Macchiato"
 zoxide init fish --cmd cd | source
 eval "$(starship init fish)"
 # colorscript -r
-# fastfetch
+#fastfetch

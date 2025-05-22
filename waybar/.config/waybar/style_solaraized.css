@@ -1,0 +1,86 @@
+* {
+    /* font-family: UbuntuMono Nerd Font; */
+    font-family: Mononoki Nerd Font;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#custom-icon {
+    font-size: 17px;
+    color: #268bd2;
+}
+
+#window {
+    color: #fdf6e3;
+    font-size: 18px;
+}
+
+#custom-music {
+    color: #859900;
+    font-size: 15px;
+}
+
+#waybar {
+    background: #002b36;
+    /* border: 2px solid rgba(255, 255, 255, 0.1); */
+    border: 2px solid #268bd2;
+    border-radius: 0px; /* rounded corners */
+}
+
+tooltip {
+    background: #002b36;
+    color: #93a1a1;
+    border-radius: 2px;
+    border: 2px solid #2aa198;
+}
+
+
+#hyprland-workspaces {
+    font-size: 30px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    /* transition: 0.005s ease-in-out; */
+}
+
+#workspaces button {
+    color: #268bd2;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 0px;
+    /* transition: 0.005s ease-in-out; */
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#workspaces button.active {
+    color: #859900;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#workspaces button:hover {
+    background: none;
+    color: #b58900;
+}
+
+#battery {
+    color:#2aa198;
+}
+
+#clock {
+    color: #d33682;
+}
+
+ #custom-pipewire {
+    color: #b58900;
+}
+
+#cpu {
+    color: #dc322f;
+}
+
+#memory {
+    color: #859900;
+}
+

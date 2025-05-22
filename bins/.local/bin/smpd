@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$1" = "-k" ]; then
+    pgrep mpd && killall mpd
+    pgrep mpd-mpris && killall mpd-mpris
+else
+    pgrep mpd || mpd;
+    pgrep mpd-mpris || nohup mpd-mpris;
+fi
+

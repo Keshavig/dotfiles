@@ -1,9 +1,8 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     "mod": "dock",
     "height": 27,
-    "width": 1350,
     "margin-left": 10,
     "margin-right": 10,
     "margin-top": 3,
@@ -14,24 +13,28 @@
     "reload_style_on_change": true,
     "modules-left": [
         "custom/icon",
-        "hyprland/workspaces",
-        "custom/opening_and_closing_brackets",
-        "hyprland/window"
+        "hyprland/workspaces"
+        // "custom/opening_and_closing_brackets",
+        // "hyprland/window"
     ],
+
+    // "modules-center": [
+    //     // "custom/music"
+    //     // "hyprland/window"
+    // ],
 
     "modules-right": [
         "cpu",
         "custom/space",
         "custom/space",
 
-        "memory",
+        "custom/memory",
         "custom/space",
         "custom/space",
 
         "battery",
         "custom/space",
         "custom/space",
-
 
         "custom/pipewire",
         "custom/space",
@@ -40,50 +43,44 @@
         "clock",
     ],
 
+    "custom/music": {
+        "exec": "~/.local/bin/music-waybar",
+        "return-type": "json",
+        "format": "{text}",
+        "interval": 3,
+        "tooltip": true,
+        "on-click": "playerctl --player=spotify play-pause",
+        "on-click-left": "hyprctl dispatch workspace 5",
+        "on-scroll-up": "playerctl --player=spotify next",
+        "on-scroll-down": "playerctl --player=spotify previous"
+    },
+
     "custom/space": {
         "format": " "
     },
 
-    "custom/comma": {
-        "format": "|"
-    },
-
     "custom/icon": {
-        "format": " ⚙️ ",
-        "on-click": "rofi -show drun -sort -show-icons"
+        // "format": "   ",
+        // "format": " ke@archo: ",
+        "format": " Spaces: ",
+        "on-click": "rofi -show drun -sort",
+        "on-click-left": "kitty",
+        "on-click-right": "hyprctl dispatch killactive"
         // "on-click": "~/.local/bin/change_waybar_style"
     },
 
-    "custom/poweroffLogo": {
-        "format": "   ",
-        "on-click": "~/.local/bin/poweroffthis"
-    },
-
-
-    "custom/storage": {
-        "format": "storage: {percentage}% |",
-        "format-alt": "{percentage}% ",
-        "format-alt-click": "click-right",
-        "return-type": "json",
-        "interval": 60,
-        "exec": "~/.config/waybar/modules/storage.sh"
-    },
-
-    "custom/packages": {
-        "format": "  {}",
-        "exec": "pacman -Qq | wc -l",
-        "on-click": "notify-send 'Why click dawg??'"
-    },
-
     "cpu": {
-        // "format": "cpu: {usage}%",
-        "format": "🗄️ {usage}%",
+        "format": "▓ {usage}%",
+        "tooltip": true,
         "on-click": "kitty --hold sh -c 'htop'"
     },
 
-    "memory": {
-        // "format": "mem: {}%",
-        "format": "🖥️ {}%",
+    "custom/memory": {
+        "exec": "~/.local/bin/t10",
+        "return-type": "json",
+        "format": "🖥 {}",
+        "interval": 3,
+        "tooltip": true,
         "on-click": "kitty --hold sh -c 'htop'"
     },
 
@@ -92,29 +89,45 @@
     },
 
     "hyprland/window": {
-        "format": "|{class}|",
+        "format": "{class}",
         "max-length": 120
     },
 
     "hyprland/workspaces": {
-        "format": "{icon}",
+        "format": "<span weight='bold' size='12300'>{icon}</span>",
+        // "format": "{icon}",
+        // "format": "{icon}",
+        // "format-icons": {
+        //     "1": " ",
+        //     "2": "",
+        //     "3": " ",
+        //     "4": "<span size='13500'> </span>",
+        //     "5": " ",
+        //     "6": " ",
+        //     "7": " ",
+        //     "8": " ",
+        //     "9": " ",
+        //     "0": " ",
+        // },
+        //
         "format-icons": {
-            // "1": "🏠",
-            "1": "🐧",
-            "2": "👨🏻‍💻",
-            "3": "🌍",
-            "4": "🛠️",
-            "5": "🎧",
-            "6": "🐠",
-            "7": "🐱",
-            "8": "🐦‍🔥",
-            "9": "👁️‍🗨️",
+            "1": "dev",
+            "2": "vim",
+            "3": "web",
+            "4": "null",
+            "5": "music",
+            "6": "etc",
+            "7": "space",
+            "8": "void",
+            "9": "drag",
+            "0": "on",
         },
         
        "sort-by-number": true
     },
+
     "clock": {
-        "format": "<span weight='bold' size='11900'>⌚</span> {:%I:%M} ",
+        "format": "<span weight='bold' size='11900'> </span>{:%A %I:%M} ",
         // "format": "time: {:%I:%M}",
         "rotate": 0,
         "on-click": "kitty --hold sh -c 'date'",
@@ -134,24 +147,23 @@
 
     "battery": {
         "bat": "BAT0", // Replace with your battery name: get it with: ls /sys/class/power_supply/ here you should get BAT(SOMENUMBER)
-        "interval": 60,
+        "interval": 5,
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "<span weight='bold' size='14000'>🔋</span> {capacity}%",
-        // "format-charging": "<span weight='bold' size='14000'>🔋</span> {capacity}%",
-        // "format-plugged": "<span weight='bold' size='14000'>🔋</span> {capacity}%",
+
+        "format": "<span weight='bold' size='14000'> </span> {capacity}%",
         "max-length": 25
         // "format-charging": "<span weight='bold' size='14000'> </span> {capacity}%",
         // "format-plugged": "<span weight='bold' color='#1abc9c' size='14000'> </span> <span color='#ea9a97'>{capacity}%</span>",
     },
 
     "custom/pipewire": {
-        "format": "📢 {}%",
+        "format": "  {}%",
         // "format": "volume: {}%",
         "exec": "pamixer --get-volume",
-        "on-click-left": "pavucontrol",
+        "on-click": "pavucontrol",
         "interval": 5
     }
 }

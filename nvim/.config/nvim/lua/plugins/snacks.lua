@@ -6,7 +6,7 @@ return {
     opts = {
         statuscolumn = { enabled = false },
         scroll       = { enabled = false }, -- Gives me headache especially when using gg/G in large files
-        dashboard    = { enabled = true  },
+        dashboard    = { enabled = false },
         quickfile    = { enabled = true  },
         bigfile      = { enabled = true  },
     }

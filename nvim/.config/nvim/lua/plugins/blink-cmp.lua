@@ -28,7 +28,7 @@ return {
                 },
                 menu = {
                     auto_show = true,
-                    border = "none",
+                    border = "single",
                     scrollbar = false,
                     winhighlight = "Normal:Normal,FloatBorder:CmpBorder,CursorLine:Visual,Search:None",
                     draw = {

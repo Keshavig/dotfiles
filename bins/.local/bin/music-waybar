@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+player="spotify"
+if ! playerctl --player=spotify status >/dev/null 2>&1; then
+    if ! playerctl --player=mpd status >/dev/null 2>&1; then
+        echo "{}"
+        exit 0
+    else
+        player="mpd"
+    fi
+fi
+
+if [ "$(playerctl --player=$player status)" == "Playing" ]; then
+    main_output=$(playerctl --player=$player metadata --format '<span color="#b3f7ca">  </span><span color="#ffffff"> {{xesam:title}}</span>' 2>/dev/null | sed 's/.mp3//g')
+elif [ "$(playerctl --player=$player status)" == "Paused" ]; then
+    main_output=$(playerctl --player=$player metadata --format '<span color="#b3f7ca">  </span><span color="#a9a1e1"> {{xesam:title}}</span>' 2>/dev/null | sed 's/.mp3//g')
+fi
+
+# Extract fields for tooltip, with fallback to N/A
+title=$(playerctl --player=$player metadata --format '{{xesam:title}}' 2>/dev/null || echo "N/A")
+artist=$(playerctl --player=$player metadata --format '{{xesam:artist}}' 2>/dev/null || echo "N/A")
+album=$(playerctl --player=$player metadata --format '{{xesam:album}}' 2>/dev/null || echo "N/A")
+track_number=$(playerctl --player=$player metadata --format '{{xesam:trackNumber}}' 2>/dev/null || echo "N/A")
+length=$(playerctl --player=$player metadata --format '{{mpris:length}}' 2>/dev/null || echo "0")
+
+# Convert length from microseconds to MM:SS format
+if [ -n "$length" ] && [ "$length" -gt 0 ]; then
+    length_seconds=$((length / 1000000))
+    length_formatted=$(printf "%02d:%02d" $((length_seconds / 60)) $((length_seconds % 60)))
+else
+    length_formatted="N/A"
+fi
+
+# Format tooltip with actual newlines for Waybar rendering
+tooltip="<b>Now Playing</b>
+ <b>Title:</b> <span color='#b3f7ca'>${title}</span>
+ <b>Artist:</b> <span color='#ffffff'>${artist}</span>
+ <b>Album:</b> <span color='#f0c674'>${album}</span>
+ <b>Track:</b> <span color='#ffffff'>${track_number}</span>
+ <b>Length:</b> <span color='#ffffff'>${length_formatted}</span>"
+
+# Use jq to construct valid JSON, removing trailing newline
+jq -n --arg text "$main_output" --arg tooltip "$tooltip" \
+  '{"text": $text, "tooltip": $tooltip}' | tr -d '\n'

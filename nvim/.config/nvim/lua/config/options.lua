@@ -72,7 +72,7 @@ end
 vim.o.cmdheight = 1
 vim.o.completeopt = menuone, noinsert, noselect
 vim.cmd("set hlsearch")
-vim.cmd("set nofsync")
+vim.o.fsync = false
 vim.cmd("set cinoptions=g0")
 vim.cmd("set termguicolors")
 vim.cmd("set guicursor=")

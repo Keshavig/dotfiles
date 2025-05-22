@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Get the top 10 processes with combined memory usage
+output=$(ps -eo comm,rss --sort=-rss | awk 'BEGIN {print "[Name]\t[Usage MB]"} {mem[$1]+=$2} END {for (proc in mem) print proc "\t" mem[proc]/1024 " MB"}' | sort -k2 -nr | head -n 11 | column -t)
+
+# Escape newlines and quotes for JSON tooltip
+tooltip=$(echo "$output" | sed ':a;N;$!ba;s/\n/\\n/g' | sed 's/"/\\"/g')
+# perc=$(free -h | awk '/Mem:/ {printf "%.1f%%", (($3/1024)/$2)*100}')
+perc=$(free | awk '/Mem:/ {printf "%.2f%%", ($3/$2)*100}')
+
+# Output JSON for Waybar
+echo "{\"text\": \"$perc\", \"tooltip\": \"$tooltip\"}"

@@ -1,33 +1,39 @@
 * {
-    /* font-family: UbuntuMono Nerd Font; */
+    /* font-family: "JetBrains Mono Nerd Font"; */
     font-family: Mononoki Nerd Font;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 #custom-icon {
-    font-size: 17px;
-    color: #268bd2;
+    font-size: 15px;
+    color: #0db9d7;
 }
 
 #window {
-    color: #fdf6e3;
+    color: #a9a1e1;
     font-size: 18px;
 }
 
+#custom-music {
+    color: #9ece6a;;
+    font-size: 15px;
+}
+
 #waybar {
-    background: #002b36;
+    background: #1f2329;
     border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0px; /* rounded corners */
 }
 
 tooltip {
-    background: #002b36;
-    color: #93a1a1;
+    /* color: #7dcfff; */
     border-radius: 2px;
-    border: 2px solid #2aa198;
+    /* border: 2px solid #0db9d7; */
 }
 
+#hyprland-window {
+    color: #0db9d7;
+}
 
 #hyprland-workspaces {
     font-size: 30px;
@@ -38,7 +44,9 @@ tooltip {
 }
 
 #workspaces button {
-    color: #268bd2;
+    background: rgba(23, 23, 23, 0.0);
+    /* color: #bbc2cf; */
+    color: #9ccfd8;
     box-shadow: none;
     text-shadow: none;
     border-radius: 0px;
@@ -48,33 +56,148 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: #859900;
+    /* color: #3e8fb0; */
+    color: #3e8fb0;
+    /* transition: all 0.005s ease-in-out; */
+    padding-left: 4px;
+    padding-right: 4px;
+
+    /* border: none; */
+    /* border-bottom: 2px solid #3e8fb0; */
+    /* border-bottom: 2px solid #3e8fb0; */
+}
+
+#workspaces button.empty {
+    color: #e0af68;
+    /* color: #9ece6a; */
+    /* color: #bbc2cf; */
+    /* transition: all 0.3s ease; */
+    padding-left: 4px;
+    padding-right: 4px;
+
+    /* transition: all 0.005s ease-in-out; */
+    /* border: none; */
+    /* border-bottom: 2px solid #e0af68; */
+}
+
+/* Is equal to inactive workspaces */
+#workspaces button {
+    /* transition: all 0.3s ease; */
     padding-left: 4px;
     padding-right: 4px;
 }
 
 #workspaces button:hover {
     background: none;
-    color: #b58900;
+    color: #f7768e;
+    /* animation: ws_hover 20s ease-in-out 1; */
+    /* transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682); */
+}
+
+#tray menu separator {
+    min-height: 10px;
+}
+
+#network {
+    color: #e0af68;
+    /* color: #7dcfff; */
+    font-weight: bold;
+    /* font-size: 13px; */
+    padding-right: 0px;
+    padding-left: 4px;
 }
 
 #battery {
-    color:#2aa198;
+    color:#7dcfff;
+    /* font-weight: bold; */
+    /* font-size: 13px; */
+    padding-right: 0px;
+    padding-left: 4px;
+
+
+    /* transition: all 0.005s ease-in-out; */
+    /* border: none; */
+    /* border-bottom: 2px solid #7dcfff; */
+    /* border-bottom-width: 2px; */
+}
+
+#custom-kernel {
+    color:#9ece6a;
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 0px;
+    padding-left: 4px;
+
+
+    /* transition: all 0.005s ease-in-out; */
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #9ece6a; /* Keep only the underline */
+    border-bottom-width: 2px;
+}
+
+#custom-batProp {
+    color: #1abc9c;
 }
 
 #clock {
-    color: #d33682;
+    /* color: #7dcfff; */
+    color: #9d7cd8;
+    /* font-size: 13px; */
+
+    /* transition: all 0.005s ease-in-out; */
+    /* border: none; */
+    /* border-bottom: 2px solid #9d7cd8; */
+    /* border-bottom-width: 2px; */
+}
+ #custom-pipewire {
+    color: #ff9e64;
+    /* font-size: 13px; */
+
+    /* transition: all 0.005s ease-in-out; */
+    /* border: none; */
+    /* border-bottom: 2px solid #ff9e64; */
+    /* border-bottom-width: 2px; */
 }
 
- #custom-pipewire {
-    color: #b58900;
+#custom-volProp {
+    color: #e0af68;
+}
+
+
+#custom-poweroffLogo {
+    color: #bbc2cf;
+    font-size: 15px;
 }
 
 #cpu {
-    color: #dc322f;
+    /* font-size: 13px; */
+    /* color: #db4b4b; */
+    /* color: #7dcfff; */
+    color: #f7768e;
+
+    /* transition: all 0.005s ease-in-out; */
+    /* border: none; */
+    /* border-bottom: 2px solid #f7768e; */
+    /* border-bottom-width: 2px; */
 }
 
-#memory {
-    color: #859900;
+#custom-memory {
+    /* font-size: 13px; */
+    color: #9ece6a;
+
+
+    /* transition: all 0.005s ease-in-out; */
+    /* border: none; */
+    /* border-bottom: 2px solid #9ece6a; */
+    /* border-bottom-width: 2px; */
 }
 
+#taskbar {
+    padding: 1px;
+    /* width: 100%; */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
