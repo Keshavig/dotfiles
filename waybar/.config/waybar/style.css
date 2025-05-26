@@ -1,124 +1,82 @@
 * {
-    /* font-family: "JetBrains Mono Nerd Font"; */
-    font-family: Mononoki Nerd Font;
+    font-family: "Mononoki Nerd Font";
     font-weight: bold;
     font-size: 14px;
 }
 
 #custom-icon {
-    font-size: 15px;
+    font-size: 20px;
     color: #0db9d7;
 }
 
+
 #window {
-    color: #a9a1e1;
+    /* background-color: #a9a1e1; */
+    background-color: #ff9e64;
+    color: #000000;
+    padding-left: 5px;
     font-size: 18px;
 }
 
+
 #custom-music {
-    color: #9ece6a;;
-    font-size: 15px;
+    background-color: #1abc9c;
+    padding-left: 5px;
+    padding-right: 12px;
+    margin-right: 120px;
 }
 
 #waybar {
-    background: #1f2329;
+    background: #181818;
     border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 tooltip {
-    /* color: #7dcfff; */
     border-radius: 2px;
-    /* border: 2px solid #0db9d7; */
 }
 
 #hyprland-window {
     color: #0db9d7;
 }
 
-#hyprland-workspaces {
-    font-size: 30px;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 1px;
-    /* transition: 0.005s ease-in-out; */
-}
-
 #workspaces button {
-    background: rgba(23, 23, 23, 0.0);
-    /* color: #bbc2cf; */
-    color: #9ccfd8;
+    /* background: rgba(23, 23, 23, 0.0); */
+    background: #b36b39; /* Is overwritten by button.<state> specific settings */
     box-shadow: none;
     text-shadow: none;
     border-radius: 0px;
-    /* transition: 0.005s ease-in-out; */
     padding-left: 4px;
     padding-right: 4px;
 }
 
 #workspaces button.active {
-    /* color: #3e8fb0; */
-    color: #3e8fb0;
-    /* transition: all 0.005s ease-in-out; */
-    padding-left: 4px;
-    padding-right: 4px;
-
-    /* border: none; */
-    /* border-bottom: 2px solid #3e8fb0; */
-    /* border-bottom: 2px solid #3e8fb0; */
+    color: #181818;
+    background-color: #0db9d7;
 }
 
 #workspaces button.empty {
-    color: #e0af68;
-    /* color: #9ece6a; */
-    /* color: #bbc2cf; */
-    /* transition: all 0.3s ease; */
-    padding-left: 4px;
-    padding-right: 4px;
-
-    /* transition: all 0.005s ease-in-out; */
-    /* border: none; */
-    /* border-bottom: 2px solid #e0af68; */
+    background: #f7768e;
 }
 
-/* Is equal to inactive workspaces */
 #workspaces button {
-    /* transition: all 0.3s ease; */
-    padding-left: 4px;
-    padding-right: 4px;
+    color: #282c34;
+    background-color: #9d7cd8;
 }
 
 #workspaces button:hover {
-    background: none;
-    color: #f7768e;
-    /* animation: ws_hover 20s ease-in-out 1; */
-    /* transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682); */
+    color: #282c34;
+    background: #0db9d7;
 }
 
 #tray menu separator {
     min-height: 10px;
 }
 
-#network {
-    color: #e0af68;
-    /* color: #7dcfff; */
-    font-weight: bold;
-    /* font-size: 13px; */
-    padding-right: 0px;
-    padding-left: 4px;
-}
-
 #battery {
-    color:#7dcfff;
-    /* font-weight: bold; */
-    /* font-size: 13px; */
-    padding-right: 0px;
-    padding-left: 4px;
-
-
-    /* transition: all 0.005s ease-in-out; */
-    /* border: none; */
-    /* border-bottom: 2px solid #7dcfff; */
-    /* border-bottom-width: 2px; */
+    background-color: #7dcfff;
+    color: #181818;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #custom-kernel {
@@ -129,67 +87,38 @@ tooltip {
     padding-left: 4px;
 
 
-    /* transition: all 0.005s ease-in-out; */
-    border: none; /* Remove all borders */
-    border-bottom: 2px solid #9ece6a; /* Keep only the underline */
+    border: none;
+    border-bottom: 2px solid #9ece6a;
     border-bottom-width: 2px;
 }
 
-#custom-batProp {
-    color: #1abc9c;
-}
-
 #clock {
-    /* color: #7dcfff; */
-    color: #9d7cd8;
-    /* font-size: 13px; */
-
-    /* transition: all 0.005s ease-in-out; */
-    /* border: none; */
-    /* border-bottom: 2px solid #9d7cd8; */
-    /* border-bottom-width: 2px; */
-}
- #custom-pipewire {
-    color: #ff9e64;
-    /* font-size: 13px; */
-
-    /* transition: all 0.005s ease-in-out; */
-    /* border: none; */
-    /* border-bottom: 2px solid #ff9e64; */
-    /* border-bottom-width: 2px; */
+    background-color: #9d7cd8;
+    color: #181818;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-#custom-volProp {
-    color: #e0af68;
-}
-
-
-#custom-poweroffLogo {
-    color: #bbc2cf;
-    font-size: 15px;
+#custom-pipewire {
+    background-color: #ff9e64;
+    color: #181818;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #cpu {
-    /* font-size: 13px; */
-    /* color: #db4b4b; */
-    /* color: #7dcfff; */
-    color: #f7768e;
-
-    /* transition: all 0.005s ease-in-out; */
-    /* border: none; */
-    /* border-bottom: 2px solid #f7768e; */
-    /* border-bottom-width: 2px; */
+    background-color: #f7768e;
+    color: #181818;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #custom-memory {
     /* font-size: 13px; */
-    color: #9ece6a;
-
-
-    /* transition: all 0.005s ease-in-out; */
-    /* border: none; */
-    /* border-bottom: 2px solid #9ece6a; */
-    /* border-bottom-width: 2px; */
+    background-color: #9ece6a;
+    color: #181818;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #taskbar {

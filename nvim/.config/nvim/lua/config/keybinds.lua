@@ -1,25 +1,25 @@
 -- stylua: ignore
-local project_dir = "~/projects"
-vim.keymap.set("n", "<leader>pf", function()
-    require("fzf-lua").files({
-        cwd = vim.fn.expand(project_dir),
-        fd_opts = "--type directory --max-depth 3"
-    })
-end, { silent = true, desc = "Search folder in ~/project directory" })
-
-vim.keymap.set("n", "<leader>.", function()
-    require("fzf-lua").files({
-        cwd = vim.fn.expand("../../"),
-        fd_opts = "--max-depth 3 --type f",
-    })
-end, { noremap = true, silent = true, desc = "Search files in current directory preview" })
-
-vim.keymap.set("n", "<leader>nc", function()
-    require("fzf-lua").files({
-    cwd = vim.fn.stdpath("config"),
-})
-end, { noremap = true, silent = true, desc = "Search files in Neovim config directory" })
-
+-- local project_dir = "~/projects"
+-- vim.keymap.set("n", "<leader>pf", function()
+--     require("fzf-lua").files({
+--         cwd = vim.fn.expand(project_dir),
+--         fd_opts = "--type directory --max-depth 3"
+--     })
+-- end, { silent = true, desc = "Search folder in ~/project directory" })
+--
+-- vim.keymap.set("n", "<leader>.", function()
+--     require("fzf-lua").files({
+--         cwd = vim.fn.expand("../../"),
+--         fd_opts = "--max-depth 3 --type f",
+--     })
+-- end, { noremap = true, silent = true, desc = "Search files in current directory preview" })
+--
+-- vim.keymap.set("n", "<leader>nc", function()
+--     require("fzf-lua").files({
+--     cwd = vim.fn.stdpath("config"),
+-- })
+-- end, { noremap = true, silent = true, desc = "Search files in Neovim config directory" })
+--
 -- stylua: ignore end
 vim.keymap.set("n", "<leader>ff", "<CMD>FzfLua files<CR>", { desc = "Find files in current directory (FZF)" })
 
@@ -59,8 +59,8 @@ vim.keymap.set("n", "N", "Nzzzv",       { desc = "Go to previous search result" 
 vim.keymap.set("n", "<space>to", function()
     vim.cmd("vnew")
     vim.cmd("term")
-    vim.cmd.wincmd("J")
-    vim.api.nvim_win_set_height(0, 15)
+    -- vim.cmd.wincmd("J")
+    -- vim.api.nvim_win_set_height(0, 15)
 
     vim.api.nvim_feedkeys("A", "n", false)
 end)
@@ -68,7 +68,7 @@ end)
 vim.keymap.set("t", "<ESC>", "<c-\\><c-n>")
 vim.keymap.set("i", "<C-c>", "<ESC>")
 vim.keymap.set("n", "<C-c>", "<CMD>nohlsearch<CR>")
-vim.keymap.set("i", "<C-k>", "<ESC>")
+-- vim.keymap.set("i", "<C-k>", "<ESC>")
 vim.keymap.set({"i", "n" }, "<C-BS>", "<CMD> norm db<CR>")
 
 -- vim.keymap.set("n", "<leader>c",  "<CMD>Compile<CR>",                  { desc = "Emacs like compile mode" })

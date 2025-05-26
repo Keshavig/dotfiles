@@ -52,6 +52,7 @@ alias rm='rm -v'
 alias ff='fastfetch'
 alias clear='clear -x'
 alias cfetch='countryfetch'
+alias sudo='doas'
 
 # colorscript random
 # fastfetch
