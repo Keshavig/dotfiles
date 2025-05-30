@@ -7,12 +7,12 @@
 --     })
 -- end, { silent = true, desc = "Search folder in ~/project directory" })
 --
--- vim.keymap.set("n", "<leader>.", function()
---     require("fzf-lua").files({
---         cwd = vim.fn.expand("../../"),
---         fd_opts = "--max-depth 3 --type f",
---     })
--- end, { noremap = true, silent = true, desc = "Search files in current directory preview" })
+vim.keymap.set("n", "<leader>.", function()
+    require("fzf-lua").files({
+        cwd = vim.fn.expand("../../"),
+        fd_opts = "--max-depth 3 --type f",
+    })
+end, { noremap = true, silent = true, desc = "Search files in current directory preview" })
 --
 -- vim.keymap.set("n", "<leader>nc", function()
 --     require("fzf-lua").files({

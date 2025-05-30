@@ -1,11 +1,15 @@
 * {
     font-family: "Mononoki Nerd Font";
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 #custom-icon {
     font-size: 24px;
+
+    /* background-color: #0db9d7; */
+    /* background-color: #9ece6a; */
+    /* color: #000000; */
 }
 
 window#waybar.empty #window {
@@ -14,22 +18,25 @@ window#waybar.empty #window {
 }
 
 #window {
+    /* background-color: #ff9e64; */
+    /* color: #000000; */
+    /* padding-left: 5px; */
+    /* padding-right: 10px; */
+
     color: #e0def4;
 }
 
-#custom-bar {
-    /* color: #c4a7e7; */
-    color: transparent;
-}
 
 #custom-music {
     background-color: #1abc9c;
     padding-left: 5px;
     padding-right: 12px;
+    /* margin-right: 120px; */
 }
 
 #waybar {
     background: #181818;
+    /* background: transparent; */
     border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -42,6 +49,11 @@ tooltip {
 }
 
 #workspaces button {
+    /* background: rgba(23, 23, 23, 0.0); */
+
+    /* Is overwritten by button.<state> specific settings */
+    /* background: #b36b39; */
+
     box-shadow: none;
     text-shadow: none;
     border-radius: 0px;
@@ -50,19 +62,32 @@ tooltip {
 }
 
 #workspaces button.active {
+
+    /* color: #e0def4; */
     color: #f7768e;
+
+    /* color: #181818; */
+    /* background: #f7768e; */
 }
 
 #workspaces button.empty {
     color: #f6c177;
+
+    /* background-color: #0db9d7; */
 }
 
 #workspaces button {
     color: #9d7cd8;
+
+    /* color: #282c34; */
+    /* background-color: #9d7cd8; */
 }
 
 #workspaces button:hover {
+    /* color: #9ece6a; */
+    /* color: #282c34; */
     color: #0db9d7;
+    /* background: #0db9d7; */
 }
 
 #tray menu separator {
@@ -70,33 +95,50 @@ tooltip {
 }
 
 #battery {
-    color: #7dcfff;
+    background-color: #7dcfff;
+    color: #181818;
     padding-left: 5px;
     padding-right: 5px;
 }
 
+#custom-kernel {
+    color:#9ece6a;
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 0px;
+    padding-left: 4px;
+
+
+    border: none;
+    border-bottom: 2px solid #9ece6a;
+    border-bottom-width: 2px;
+}
+
 #clock {
-    color: #9d7cd8;
+    background-color: #9d7cd8;
+    color: #181818;
     padding-left: 5px;
-    padding-right: 2px;
+    padding-right: 5px;
 }
 
 #custom-pipewire {
-    color: #ff9e64;
+    background-color: #ff9e64;
+    color: #181818;
     padding-left: 5px;
     padding-right: 5px;
 }
 
 #cpu {
-    color: #f7768e;
+    background-color: #f7768e;
+    color: #181818;
     padding-left: 5px;
     padding-right: 5px;
 }
 
-
 #custom-memory {
     /* font-size: 13px; */
-    color: #9ece6a;
+    background-color: #9ece6a;
+    color: #181818;
     padding-left: 5px;
     padding-right: 5px;
 }

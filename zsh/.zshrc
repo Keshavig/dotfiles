@@ -17,7 +17,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+# zinit light Aloxaf/fzf-tab
 
 # Add in snippets
 zinit snippet OMZL::git.zsh
@@ -70,26 +70,14 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-# alias ls="exa --color=always"
-alias ls="ls --color=always -A"
-alias sudo='doas'
-alias ff='fastfetch'
-# alias remacs='killall emacs; /usr/local/bin/emacs --daemon &'
-# alias emacs="emacsclient -c -a 'emacs' "
+alias ls="ls --color=always"
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias startp="/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland"
-alias funk="~/projects/funk/bin/python3 ~/projects/funk/main.py"
-alias update="sudo pacman -Syu --noconfirm"
 
 # Shell integrations
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-# colorscript -r
-# fastfetch -c neofetch --logo-width 40 --logo ~/Downloads/archlinux_ff.png
-# fastfetch
-bindkey -v
 eval "$(starship init zsh)"

@@ -3,10 +3,10 @@
     "position": "top",
     "mod": "dock",
     "height": 25,
-    "margin-left": 7,
-    "margin-right": 7,
-    "margin-top": 3,
-    // "margin-bottom": 3,
+    // "margin-left": 10,
+    // "margin-right": 10,
+    // "margin-top": 3,
+    // "margin-bottom": 0,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
@@ -29,17 +29,13 @@
 
     "modules-right": [
         "cpu",
-        "custom/bar",
-
+        "custom/space",
         "custom/memory",
-        "custom/bar",
-
+        "custom/space",
         "battery",
-        "custom/bar",
-
+        "custom/space",
         "custom/pipewire",
-        "custom/bar",
-
+        "custom/space",
         "clock",
     ],
 
@@ -58,8 +54,7 @@
 
     "custom/bar": {
         // "format": "⸺",
-        // "format": "⮞"
-        "format": "|"
+        "format": "⮞"
     },
 
     "custom/space": {
@@ -70,18 +65,14 @@
         "format": "  ",
         // "format": " ke@archo: ",
         // "format": " Spaces: ",
-
-        // "on-click": "fuzzel -b 1f2329ff -w 45 -y 12 -f 'Mononoki Nerd Font-11' --line-height=18 -I",
-        // "on-click-left": "kitty",
-
-        "on-click": "hyprctl dispatch workspace empty",
-        "on-click-left": "fuzzel -b 1f2329ff -w 45 -y 12 -f 'Mononoki Nerd Font-11' --line-height=18 -I",
-        "tooltip": false
-        // "on-click-right": "hyprctl dispatch killactive"
+        "on-click": "rofi -show drun -sort",
+        "on-click-left": "kitty",
+        "on-click-right": "hyprctl dispatch killactive"
+        // "on-click": "~/.local/bin/change_waybar_style"
     },
 
     "cpu": {
-        "format": "<span size='17000'>󰻠 </span>{usage}%",
+        "format": "<span size='15000'>󰻠 </span>{usage}%",
         "tooltip": true,
         "on-click": "kitty --hold sh -c 'htop'"
     },

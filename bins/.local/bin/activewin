@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Get the active window title from hyprctl
+notify-send "$(hyprctl activewindow | grep title)"

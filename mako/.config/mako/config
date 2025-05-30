@@ -5,13 +5,13 @@ background-color=#16161e
 width=500
 height=150
 text-color=#bfbfbf
-border-color=#9ece6a
+# border-color=#9e
 progress-color=#282c34
 ignore-timeout=1
 icons=1
-default-timeout=4500
+default-timeout=3000
 border-radius=3
-font=Ubuntu Mono 14
+font=JetBrains Mono 12
 # transparency=0.6
 
 [urgency=high]
