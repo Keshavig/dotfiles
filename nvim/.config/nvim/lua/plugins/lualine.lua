@@ -18,18 +18,35 @@ return {
         --     hl_group = "lualine_c_normal",
         -- })
 
-        local colors = {
-            bg = "#282c34",
-            fg = "#c0caf5",
-            yellow = "#e0af68",
-            cyan = "#7dcfff",
-            darkblue = "#2ac3de",
-            green = "#9ece6a",
-            orange = "#ff9e64",
-            violet = "#9d7cd8",
-            magenta = "#bb9af7",
-            blue = "#7aa2f7",
-            red = "#f7768e", }
+
+        -- local colors = {
+        --     bg       = "#1d2021",  -- Background color
+        --     fg       = "#d4be98",  -- Foreground color
+        --     yellow   = "#d8a657",  -- Yellow
+        --     cyan     = "#7daea3",  -- Cyan
+        --     darkblue = "#458588",  -- Dark blue
+        --     green    = "#a9b665",  -- Green
+        --     orange   = "#d65d0e",  -- Orange
+        --     violet   = "#d3869b",  -- Violet
+        --     magenta  = "#b16286",  -- Magenta
+        --     blue     = "#83a598",  -- Blue
+        --     red      = "#ea6962",  -- Red
+        -- }
+
+	-- Doom One
+	local colors = {
+		bg = "#282c34",
+		fg = "#c0caf5",
+		yellow = "#e0af68",
+		cyan = "#7dcfff",
+		darkblue = "#2ac3de",
+		green = "#9ece6a",
+		orange = "#ff9e64",
+		violet = "#9d7cd8",
+		magenta = "#bb9af7",
+		blue = "#7aa2f7",
+		red = "#f7768e",
+	}
 
         local conditions = {
             buffer_not_empty = function()

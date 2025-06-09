@@ -75,4 +75,4 @@ vim.cmd("set hlsearch")
 vim.o.fsync = false
 vim.cmd("set cinoptions=g0")
 vim.cmd("set termguicolors")
-vim.cmd("set guicursor=")
+-- vim.cmd("set guicursor=")

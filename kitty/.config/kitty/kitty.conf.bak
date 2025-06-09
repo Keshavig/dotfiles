@@ -1,8 +1,8 @@
-# include ~/.config/kitty/themes/rose-pine-moon.conf
+include ~/.config/kitty/themes/rose-pine-moon.conf
 # include ~/.config/kitty/themes/tokyonight_night.conf
 # include ~/.config/kitty/themes/onedark.conf
 # include ~/.config/kitty/themes/solarized_dark_og.conf
-include ~/.config/kitty/themes/gruvbox_dark.conf
+# include ~/.config/kitty/themes/gruvbox_dark.conf
 # include ~/.config/kitty/themes/catppuccin-mocha.conf
 # include ~/.cache/hellwal/kitty.conf
 
@@ -11,7 +11,7 @@ cursor_shape block
 enable_audio_bell no
 bell_on_tab no
 
-background_opacity 1.0
+background_opacity 1
 cursor_blink_interval 0
 confirm_os_window_close 0
 
@@ -24,7 +24,7 @@ clear_all_shortcuts yes
 # BASICS_END
 
 # BEGIN_KITTY_FONTS
-font_family      family="JetBrains Mono"
+font_family      family='Mononoki Nerd Font'
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
