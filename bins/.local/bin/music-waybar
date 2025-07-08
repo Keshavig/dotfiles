@@ -11,9 +11,9 @@ if ! playerctl --player=spotify status >/dev/null 2>&1; then
 fi
 
 if [ "$(playerctl --player=$player status)" == "Playing" ]; then
-    main_output=$(playerctl --player=$player metadata --format '<span size="14000" color="#ff6c6b">  </span><span color="#181818"> {{xesam:title}}</span>' 2>/dev/null | sed 's/.mp3//g')
-# elif [ "$(playerctl --player=$player status)" == "Paused" ]; then
-#     main_output=$(playerctl --player=$player metadata --format '<span size="14000" color="#cc99cc">  </span><span color="#a9a1e1"> {{xesam:title}}</span>' 2>/dev/null | sed 's/.mp3//g')
+    main_output=$(playerctl --player=$player metadata --format '<span color="#51afef">||</span><span color="#ff9e64"> {{xesam:title}}</span>' 2>/dev/null | sed 's/.mp3//g')
+elif [ "$(playerctl --player=$player status)" == "Paused" ]; then
+    main_output=$(playerctl --player=$player metadata --format '<span color="#51afef">|⟩</span><span color="#ff9e64"> {{xesam:title}}</span>' 2>/dev/null | sed 's/.mp3//g')
 fi
 
 # Extract fields for tooltip, with fallback to N/A
@@ -31,13 +31,12 @@ else
     length_formatted="N/A"
 fi
 
-# Format tooltip with actual newlines for Waybar rendering
 tooltip="<b>Now Playing</b>
- <b>Title:</b> <span color='#b3f7ca'>${title}</span>
- <b>Artist:</b> <span color='#ffffff'>${artist}</span>
+ <b>Title:</b> <span color='#51afef'>${title}</span>
+ <b>Artist:</b> <span color='#98be65'>${artist}</span>
  <b>Album:</b> <span color='#f0c674'>${album}</span>
- <b>Track:</b> <span color='#ffffff'>${track_number}</span>
- <b>Length:</b> <span color='#ffffff'>${length_formatted}</span>"
+ <b>Track:</b> <span color='#a9a1e1'>${track_number}</span>
+ <b>Length:</b> <span color='#ff6c6b'>${length_formatted}</span>"
 
 # Use jq to construct valid JSON, removing trailing newline
 jq -n --arg text "$main_output" --arg tooltip "$tooltip" \

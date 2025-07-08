@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+data=$(find ~/.config)
+~/projects/fzr/fzr $data

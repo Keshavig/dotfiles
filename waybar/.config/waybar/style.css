@@ -1,18 +1,19 @@
 * {
     font-family: "Mononoki Nerd Font";
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 #custom-icon {
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
     color: #51afef;
 }
 
-window#waybar.empty #window {
+#waybar.empty #window {
     background-color: transparent;
     color: transparent;
+    color: #16161e;
 }
 
 #window {
@@ -25,7 +26,6 @@ window#waybar.empty #window {
 }
 
 #custom-music {
-    background-color: #1abc9c;
     padding-left: 5px;
     padding-right: 12px;
 }
@@ -44,27 +44,37 @@ tooltip {
 }
 
 #workspaces button {
-    box-shadow: none;
-    text-shadow: none;
-    border-radius: 0px;
     padding-left: 4px;
     padding-right: 4px;
+    margin: 5px 4px; 
+    padding: 4px 7px;
+    border-radius: 0%;
 }
 
 #workspaces button.active {
-    color: #f7768e;
+    color: #16161e;
+    background: #51afef;
 }
+
 
 #workspaces button.empty {
-    color: #f6c177;
+    background: #f6c177;
 }
 
+
+/* #workspaces button.empty { */
+/*     color: #f6c177; */
+/* } */
+
+
 #workspaces button {
-    color: #9d7cd8;
+    background: #e0def4;
+    color: #16161e;
 }
 
 #workspaces button:hover {
-    color: #0db9d7;
+    background: #98be65;
+    color: #16161e;
 }
 
 #tray menu separator {

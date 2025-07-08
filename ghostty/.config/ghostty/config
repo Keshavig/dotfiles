@@ -46,4 +46,4 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 cursor-color = "#e0af68" 
 # font-family = Mononoki Nerd Font
-font-family = JetBrains Mono
+font-family = JetBrains Mono Nerd Font
